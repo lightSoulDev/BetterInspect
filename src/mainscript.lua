@@ -99,10 +99,15 @@ local function showPanelDnDInfo(panelWidget)
 
     local panelPlacement = panelWidget:GetPlacementPlain()
 
+    local width = 5
+    if (panelWidget:GetName() == "ArtsPanel") then width = 3 end
+
+    WtSetPlace(panelWidget, { sizeX = (panelPlacement.sizeY + 1) * width, sizeY = panelPlacement.sizeY })
+
     local infoWidget = CreateWG("Text", "DnDInfo", panelWidget, true,
         {
             alignX = 0,
-            sizeX = panelPlacement.sizeX,
+            sizeX = (panelPlacement.sizeY + 1) * width,
             posX = 0,
             highPosX = 0,
             alignY = 0,
@@ -318,28 +323,40 @@ local function drawStatPanels(unitId)
     end
 
     if (atc_count > 0) then
-        WtSetPlace(statsAtcPanel,
+        local panelInfo = panels["StatsAtc"]
+
+        WtSetPlace(panelInfo.panel,
             { sizeX = (40 + 1) * atc_count, sizeY = 40 })
-        -- statsAtcPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
-        statsAtcPanel:Show(true)
+        panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
+            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+        panelInfo.panel:Show(true)
     end
     if (def_count > 0) then
-        WtSetPlace(statsDefPanel,
+        local panelInfo = panels["StatsDef"]
+
+        WtSetPlace(panelInfo.panel,
             { sizeX = (40 + 1) * def_count, sizeY = 40 })
-        -- statsDefPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
-        statsDefPanel:Show(true)
+        panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
+            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+        panelInfo.panel:Show(true)
     end
     if (atc_main_count > 0) then
-        WtSetPlace(statsAtcMainPanel,
+        local panelInfo = panels["StatsAtcMain"]
+
+        WtSetPlace(panelInfo.panel,
             { sizeX = (40 + 1) * atc_main_count, sizeY = 40 })
-        -- statsAtcMainPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
-        statsAtcMainPanel:Show(true)
+        panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
+            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+        panelInfo.panel:Show(true)
     end
     if (def_main_count > 0) then
-        WtSetPlace(statsDefMainPanel,
+        local panelInfo = panels["StatsDefMain"]
+
+        WtSetPlace(panelInfo.panel,
             { sizeX = (40 + 1) * def_main_count, sizeY = 40 })
-        -- statsDefMainPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
-        statsDefMainPanel:Show(true)
+        panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
+            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+        panelInfo.panel:Show(true)
     end
 end
 
@@ -440,8 +457,6 @@ local function drawMyArtsPanel()
 
         ::continue_arts::
     end
-
-    LogWidget(artsPanel)
 end
 
 local function onTargetChange(p)
@@ -647,6 +662,8 @@ function Init()
 
     UI.dnd(false)
 
+    setupUI()
+
     local index = 0
     for k, v in pairs(panels) do
         if (v ~= nil and v.panel ~= nil) then
@@ -668,8 +685,6 @@ function Init()
             v.panel:SetBackgroundColor(color)
         end
     end
-
-    setupUI()
     -- LogWidget(mainForm)
 end
 
