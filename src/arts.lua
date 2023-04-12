@@ -5,6 +5,22 @@ Global("STATS_ATC", {})
 Global("STATS_DEF_MAIN", {})
 Global("STATS_DEF", {})
 Global("SCROLLS", {})
+Global("CLOAKS", {})
+Global("BANNERS", {})
+
+BANNERS = {
+    ["Знамя Воеводы"] = "BannerRed",
+    ["Знамя Хранителя"] = "BannerBlue",
+    ["Знамя Тактика"] = "BannerGreen",
+}
+
+CLOAKS = {
+    ["Гильдейская накидка"] = "GuildCloak",
+    ["Чемпионская накидка"] = "ChampCloak",
+    ["Знамя Воеводы"] = "BannerRed",
+    ["Знамя Хранителя"] = "BannerBlue",
+    ["Знамя Тактика"] = "BannerGreen",
+}
 
 SCROLLS = {
     ["Орнамент Заступника"] = "Uncommon",

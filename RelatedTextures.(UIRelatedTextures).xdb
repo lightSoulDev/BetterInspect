@@ -232,5 +232,26 @@
 			<name>ScrollArtsRelic</name>
 			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll05.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
+		<!-- Cloaks -->
+		<Item>
+			<name>GuildCloak</name>
+			<textureItem href="/Interface/Icons/Spells/Guild/Tabard.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ChampCloak</name>
+			<textureItem href="/Interface/Icons/Spells/Guild/ChampionTabard.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>BannerRed</name>
+			<textureItem href="/Interface/Icons/Spells/Guild/WarlordBanner.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>BannerBlue</name>
+			<textureItem href="/Interface/Icons/Spells/Guild/GuardianBanner.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>BannerGreen</name>
+			<textureItem href="/Interface/Icons/Spells/Guild/BannerTactics.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
 	</Items>
 </UIRelatedTextures>

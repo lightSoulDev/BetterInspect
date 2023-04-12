@@ -373,6 +373,106 @@ local function drawStatPanels(unitId)
 end
 
 -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-- =-            D R A W   E X T R A S            -=
+-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+local function drawExtras(unitId)
+    hidePanelDnDInfo(extraPanel, false)
+
+    if (not UI.get("ExtraPanel", "Show")) then return end
+    local size = UI.get("ExtraPanel", "IconSize") or 40
+
+    local count = 0
+
+    local cloakMode = UI.get("ExtraPanel", "ShowCloak")
+    if (cloakMode ~= nil and cloakMode ~= "-") then
+        local itemId = unit.GetEquipmentItemId(unitId, 18, ITEM_CONT_EQUIPMENT)
+        if (itemId == nil) then goto skip_cloak end
+        local info = itemLib.GetItemInfo(itemId)
+        if (info == nil) then goto skip_cloak end
+
+        local name = FromWS(info.name)
+        if (cloakMode == "banners" and BANNERS[name] == nil) then goto skip_cloak end
+
+        if (CLOAKS[name] ~= nil) then
+            local widget = mainForm:CreateWidgetByDesc(iconTemplate:GetWidgetDesc())
+            local textBg = nil
+            WtSetPlace(widget, { sizeX = size, sizeY = size, posX = (size + 1) * count, posY = 0 })
+
+            if (UI.get("ExtraPanel", "TextBackground")) then
+                textBg = mainForm:CreateWidgetByDesc(panelTemplate:GetWidgetDesc())
+                widget:AddChild(textBg)
+                WtSetPlace(textBg, { sizeX = size, sizeY = size, posX = 0, posY = 0 })
+                textBg:SetBackgroundColor(UI.getGroupColor("ExtraPanelTextBgColor") or
+                    { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+                textBg:Show(true)
+            end
+
+            local textureId = CLOAKS[name]
+
+            local texture = GetGroupTexture("RELATED_TEXTURES", textureId)
+            if (texture ~= nil) then
+                if (widget ~= nil) then
+                    widget:SetBackgroundTexture(texture)
+                end
+            end
+
+            local textWidget = CreateWG("Text", "Info", textBg or widget, true,
+                {
+                    alignX = 0,
+                    sizeX = size,
+                    posX = 0,
+                    highPosX = 0,
+                    alignY = 0,
+                    sizeY = size,
+                    posY = 3,
+                    highPosY = 0
+                }
+            )
+            local alignX = UI.get("ExtraPanel", "TextAlignX") or "right"
+            local alignY = UI.get("ExtraPanel", "TextAlignY") or "bottom"
+            local fontSize = UI.get("ExtraPanel", "TextFontSize") or 15
+
+            textWidget:SetFormat(userMods.ToWString(
+                "<html><body alignx='"
+                .. alignX ..
+                "' aligny='"
+                .. alignY ..
+                "' fontsize='"
+                .. fontSize ..
+                "' outline='2'><rs class='class'><r name='name'/></rs></body></html>")
+            )
+
+            local level = info.level or 1
+            local levelString = tostring(level)
+
+            if (UI.get("ExtraPanel", "UseRomansForBanners")) then
+                levelString = romanNumerals[level]
+            end
+
+            textWidget:SetVal("name", tostring(levelString))
+            textWidget:SetClassVal("class", "ColorWhite")
+
+            extraPanel:AddChild(widget)
+            widget:Show(true)
+            textWidget:Show(true)
+            table.insert(activeInspectWidgets, widget)
+            count = count + 1
+        end
+
+        ::skip_cloak::
+    end
+
+    if (count > 0) then
+        WtSetPlace(extraPanel,
+            { sizeX = (size + 1) * count, sizeY = size })
+        extraPanel:SetBackgroundColor(UI.getGroupColor("ExtraPanelBgColor") or
+            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+        extraPanel:Show(true)
+    end
+end
+
+-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 -- =-           D R A W   S C R O L L S           -=
 -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -460,9 +560,9 @@ local function drawScrolls(unitId)
                     highPosY = 0
                 }
             )
-            local alignX = UI.get("ArtsPanel", "TextAlignX") or "right"
-            local alignY = UI.get("ArtsPanel", "TextAlignY") or "bottom"
-            local fontSize = UI.get("ArtsPanel", "TextFontSize") or 15
+            local alignX = UI.get("ScrollsPanel", "TextAlignX") or "right"
+            local alignY = UI.get("ScrollsPanel", "TextAlignY") or "bottom"
+            local fontSize = UI.get("ScrollsPanel", "TextFontSize") or 15
 
             textWidget:SetFormat(userMods.ToWString(
                 "<html><body alignx='"
@@ -611,6 +711,7 @@ local function onTargetChange(p)
         drawMyArtsPanel()
         drawStatPanels(avatar.GetId())
         drawScrolls(avatar.GetId())
+        drawExtras(avatar.GetId())
     end
 end
 
@@ -770,6 +871,35 @@ local function setupUI()
         a = 50,
     })
 
+    UI.addGroup("ExtraPanel", {
+        UI.createCheckBox("Show", true),
+
+        UI.createList("ShowCloak", { "-", "all", "banners" }, 3, false),
+        -- UI.createCheckBox("ShowTempInfo", false),
+
+        UI.createSlider("IconSize", { stepsCount = 32, width = 212, offset = 32 }, 40),
+        UI.createSlider("TextFontSize", { stepsCount = 20, width = 212, offset = 10 }, 15),
+        UI.createList("TextAlignX", { "left", "center", "right" }, 3, false),
+        UI.createList("TextAlignY", { "top", "middle", "bottom" }, 3, false),
+        UI.createCheckBox("UseRomansForBanners", true),
+        UI.createCheckBox("TextBackground", false),
+    })
+
+
+    UI.createColorGroup("ExtraPanelBgColor", {
+        r = 0,
+        g = 0,
+        b = 0,
+        a = 50,
+    })
+
+    UI.createColorGroup("ExtraPanelTextBgColor", {
+        r = 0,
+        g = 0,
+        b = 0,
+        a = 50,
+    })
+
     UI.setTabs({
         {
             label = "Arts",
@@ -817,6 +947,18 @@ local function setupUI()
                 "ScrollsPanel",
                 "ScrollsPanelBgColor",
                 "ScrollsPanelTextBgColor",
+            }
+        },
+        {
+            label = "Extra",
+            buttons = {
+                left = { "Restore" },
+                right = { "Accept" }
+            },
+            groups = {
+                "ExtraPanel",
+                "ExtraPanelBgColor",
+                "ExtraPanelTextBgColor",
             }
         },
     }, "Arts")
