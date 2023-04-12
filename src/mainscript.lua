@@ -512,7 +512,6 @@ local function drawScrolls(unitId)
         local info = object.GetBuffInfo(v)
         if (info ~= nil) then
             local buffName = FromWS(info.name)
-            Log("Buff: " .. buffName)
             if (SCROLLS[buffName] ~= nil) then
                 scrolls[SCROLLS[buffName]] = true
             end
