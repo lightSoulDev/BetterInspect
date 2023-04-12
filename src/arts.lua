@@ -4,6 +4,15 @@ Global("STATS_ATC_MAIN", {})
 Global("STATS_ATC", {})
 Global("STATS_DEF_MAIN", {})
 Global("STATS_DEF", {})
+Global("SCROLLS", {})
+
+SCROLLS = {
+    ["Орнамент Заступника"] = "Uncommon",
+    ["Орнамент Разрушителя"] = "Rare",
+    ["Орнамент Тайной Силы"] = "Epic",
+    ["Орнамент Героя"] = "Legendary",
+    ["Орнамент Странника"] = "Relic",
+}
 
 STATS_ATC_MAIN = {
     ['Мастерство'] = "StatMastery",

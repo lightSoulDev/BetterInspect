@@ -211,5 +211,26 @@
 			<name>StatLifesteal</name>
 			<textureItem href="/Interface/Icons/Misc/Itemmall/IMLifestealElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
+		<!-- Artifact Scrolls (F2P) -->
+		<Item>
+			<name>ScrollArtsUncommon</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll01.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ScrollArtsRare</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll02.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ScrollArtsEpic</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll03.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ScrollArtsLegendary</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll04.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ScrollArtsRelic</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll05.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
 	</Items>
 </UIRelatedTextures>

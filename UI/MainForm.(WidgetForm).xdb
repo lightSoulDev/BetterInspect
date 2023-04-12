@@ -25,6 +25,8 @@
 		<Item href="Panel/StatsPanelDef.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="Panel/StatsPanelDefMain.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 
+		<Item href="Panel/ScrollsPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="Panel/ExtraPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 
 		<Item href="SettingsFrame/BackFrame/BackFrame.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="SettingsFrame/SettingsMain.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />

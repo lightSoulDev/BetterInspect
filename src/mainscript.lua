@@ -61,6 +61,8 @@ local statsAtcPanel = mainForm:GetChildChecked("StatsPanelAtc", false)
 local statsAtcMainPanel = mainForm:GetChildChecked("StatsPanelAtcMain", false)
 local statsDefPanel = mainForm:GetChildChecked("StatsPanelDef", false)
 local statsDefMainPanel = mainForm:GetChildChecked("StatsPanelDefMain", false)
+local scrollsPanel = mainForm:GetChildChecked("ScrollsPanel", false)
+local extraPanel = mainForm:GetChildChecked("ExtraPanel", false)
 
 local panelTemplate = mainForm:GetChildChecked("Panel", false)
 
@@ -84,7 +86,15 @@ local panels = {
     ["StatsDefMain"] = {
         panel = statsDefMainPanel,
         setting = "StatsDefPanel",
-    }
+    },
+    ["Scrolls"] = {
+        panel = scrollsPanel,
+        setting = "ScrollsPanel",
+    },
+    ["Extra"] = {
+        panel = extraPanel,
+        setting = "ExtraPanel",
+    },
 }
 
 local iconTemplate = mainForm:GetChildChecked("InspectIcon", false)
@@ -160,6 +170,10 @@ local function onInspect(p)
 
     end
 end
+
+-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-- =-             D R A W   S T A T S             -=
+-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 local function drawStatIcon(name, value, textureId, panelInfo, count)
     local panel = panelInfo.panel
@@ -253,30 +267,28 @@ local function drawStatPanels(unitId)
         if (itemId == nil) then goto continue_stats end
         local info = itemLib.GetItemInfo(itemId)
         if (info == nil) then goto continue_stats end
-
-        local itemBonus = itemLib.GetBonus(itemId)
-        if (itemBonus ~= nil and itemBonus.miscStats) then
-            if itemBonus.miscStats.power then
-                stats["power"] = stats["power"] + itemBonus.miscStats.power.effective
-            end
-            if (itemBonus.miscStats.stamina) then
-                stats["stamina"] = stats["stamina"] + itemBonus.miscStats.stamina.effective
-            end
-        end
-
         if (i >= 38 and i <= 40) then
             if (ARTS_POWER[FromWS(info.name)]) then
                 powerArtLevel = info.level or 0
             end
         elseif (eqSlotsInspect[i]) then
-            -- Log("[" .. i .. "] " .. FromWS(info.name))
+            local itemBonus = itemLib.GetBonus(itemId)
+            if (itemBonus == nil) then goto continue_stats end
+            if (itemBonus.miscStats) then
+                if itemBonus.miscStats.power then
+                    stats["power"] = stats["power"] + itemBonus.miscStats.power.effective
+                end
+                if (itemBonus.miscStats.stamina) then
+                    stats["stamina"] = stats["stamina"] + itemBonus.miscStats.stamina.effective
+                end
+            end
+
             for k, v in pairs(itemBonus.specStats) do
                 if (v ~= nil and v.tooltipName ~= nil and v.value ~= nil) then
                     local statName = FromWS(v.tooltipName)
                     if (stats[statName] == nil) then
                         stats[statName] = 0
                     end
-                    -- Log(statName .. " " .. v.value)
                     stats[statName] = stats[statName] + v.value
                 end
             end
@@ -318,7 +330,7 @@ local function drawStatPanels(unitId)
                 if (added) then def_main_count = def_main_count + 1 end
             end
         else
-            Log(k .. " : " .. v)
+            -- Log(k .. " : " .. v)
         end
     end
 
@@ -361,10 +373,133 @@ local function drawStatPanels(unitId)
 end
 
 -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-- =-           D R A W   S C R O L L S           -=
+-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+local function drawScrolls(unitId)
+    hidePanelDnDInfo(scrollsPanel, false)
+    if (not UI.get("ScrollsPanel", "Show")) then return end
+    local size = UI.get("ScrollsPanel", "IconSize") or 40
+
+    local activeBuffs = object.GetBuffs(unitId)
+    if (activeBuffs == nil) then return end
+
+    local scrolls = {
+        ["Uncommon"] = false,
+        ["Rare"] = false,
+        ["Epic"] = false,
+        ["Legendary"] = false,
+        ["Relic"] = false
+    }
+
+    local rarityIndex = {
+        [1] = "Uncommon",
+        [2] = "Rare",
+        [3] = "Epic",
+        [4] = "Legendary",
+        [5] = "Relic"
+    }
+
+    local rarityFilterIndex = {
+        ["Uncommon"] = 1,
+        ["Rare"] = 2,
+        ["Epic"] = 3,
+        ["Legendary"] = 4,
+        ["Relic"] = 5
+    }
+
+    for k, v in pairs(activeBuffs) do
+        local info = object.GetBuffInfo(v)
+        if (info ~= nil) then
+            local buffName = FromWS(info.name)
+            Log("Buff: " .. buffName)
+            if (SCROLLS[buffName] ~= nil) then
+                scrolls[SCROLLS[buffName]] = true
+            end
+        end
+    end
+
+    local count = 0
+    local rarityFilter = 1
+    if (UI.get("ScrollsPanel", "Rarity") ~= nil) then
+        rarityFilter = rarityFilterIndex[UI.get("ScrollsPanel", "Rarity") or "Uncommon"]
+    end
+    for k, v in pairs(rarityIndex) do
+        if (scrolls[v] and k >= rarityFilter) then
+            local widget = mainForm:CreateWidgetByDesc(iconTemplate:GetWidgetDesc())
+            local textBg = nil
+            WtSetPlace(widget, { sizeX = size, sizeY = size, posX = (size + 1) * count, posY = 0 })
+
+            if (UI.get("ScrollsPanel", "TextBackground")) then
+                textBg = mainForm:CreateWidgetByDesc(panelTemplate:GetWidgetDesc())
+                widget:AddChild(textBg)
+                WtSetPlace(textBg, { sizeX = size, sizeY = size, posX = 0, posY = 0 })
+                textBg:SetBackgroundColor(UI.getGroupColor("ScrollsPanelTextBgColor") or
+                    { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+                textBg:Show(true)
+            end
+
+            local textureId = "ScrollArts" .. v
+
+            local texture = GetGroupTexture("RELATED_TEXTURES", textureId)
+            if (texture ~= nil) then
+                if (widget ~= nil) then
+                    widget:SetBackgroundTexture(texture)
+                end
+            end
+
+            local textWidget = CreateWG("Text", "Info", textBg or widget, true,
+                {
+                    alignX = 0,
+                    sizeX = size,
+                    posX = 0,
+                    highPosX = 0,
+                    alignY = 0,
+                    sizeY = size,
+                    posY = 3,
+                    highPosY = 0
+                }
+            )
+            local alignX = UI.get("ArtsPanel", "TextAlignX") or "right"
+            local alignY = UI.get("ArtsPanel", "TextAlignY") or "bottom"
+            local fontSize = UI.get("ArtsPanel", "TextFontSize") or 15
+
+            textWidget:SetFormat(userMods.ToWString(
+                "<html><body alignx='"
+                .. alignX ..
+                "' aligny='"
+                .. alignY ..
+                "' fontsize='"
+                .. fontSize ..
+                "' outline='2'><rs class='class'><r name='name'/></rs></body></html>")
+            )
+
+            textWidget:SetVal("name", "+")
+            textWidget:SetClassVal("class", "ColorWhite")
+
+            scrollsPanel:AddChild(widget)
+            widget:Show(true)
+            textWidget:Show(true)
+            table.insert(activeInspectWidgets, widget)
+            count = count + 1
+        end
+    end
+
+    if (count > 0) then
+        WtSetPlace(scrollsPanel,
+            { sizeX = (size + 1) * count, sizeY = size })
+        scrollsPanel:SetBackgroundColor(UI.getGroupColor("ScrollsPanelBgColor") or
+            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+        scrollsPanel:Show(true)
+    end
+end
+
+-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 -- =-              D R A W   A R T S              -=
 -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 local function drawMyArtsPanel()
+    hidePanelDnDInfo(artsPanel, false)
     if (not UI.get("ArtsPanel", "Show")) then return end
 
     local artSize = UI.get("ArtsPanel", "IconSize") or 40
@@ -373,7 +508,6 @@ local function drawMyArtsPanel()
         { sizeX = (artSize + 1) * 3, sizeY = artSize })
     artsPanel:SetBackgroundColor(UI.getGroupColor("ArtsPanelBgColor") or { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
     artsPanel:Show(true)
-    hidePanelDnDInfo(artsPanel, false)
 
     -- Artefact slots (38, 39, 40)
     for i = 38, 40 do
@@ -461,11 +595,14 @@ end
 
 local function onTargetChange(p)
     clearActiveInspect()
+
     hidePanel(artsPanel)
     hidePanel(statsAtcPanel)
     hidePanel(statsAtcMainPanel)
     hidePanel(statsDefPanel)
     hidePanel(statsDefMainPanel)
+    hidePanel(scrollsPanel)
+    hidePanel(extraPanel)
 
     local unitId = avatar.GetTarget()
     if (unitId == nil) then return end
@@ -473,6 +610,7 @@ local function onTargetChange(p)
     if (unitId == avatar.GetId()) then
         drawMyArtsPanel()
         drawStatPanels(avatar.GetId())
+        drawScrolls(avatar.GetId())
     end
 end
 
@@ -599,6 +737,39 @@ local function setupUI()
         a = 50,
     })
 
+    UI.addGroup("ScrollsPanel", {
+        UI.createCheckBox("Show", true),
+        UI.createList("Rarity", {
+            "Uncommon",
+            "Rare",
+            "Epic",
+            "Legendary",
+            "Relic",
+        }, 3, true),
+
+        UI.createSlider("IconSize", { stepsCount = 32, width = 212, offset = 32 }, 40),
+        UI.createSlider("TextFontSize", { stepsCount = 20, width = 212, offset = 10 }, 15),
+        UI.createList("TextAlignX", { "left", "center", "right" }, 3, false),
+        UI.createList("TextAlignY", { "top", "middle", "bottom" }, 3, false),
+        UI.createCheckBox("ShowTempInfo", false),
+        UI.createCheckBox("TextBackground", false),
+    })
+
+
+    UI.createColorGroup("ScrollsPanelBgColor", {
+        r = 0,
+        g = 0,
+        b = 0,
+        a = 50,
+    })
+
+    UI.createColorGroup("ScrollsPanelTextBgColor", {
+        r = 0,
+        g = 0,
+        b = 0,
+        a = 50,
+    })
+
     UI.setTabs({
         {
             label = "Arts",
@@ -634,6 +805,18 @@ local function setupUI()
                 "StatsDefPanel",
                 "StatsDefPanelBgColor",
                 "StatsDefPanelTextBgColor",
+            }
+        },
+        {
+            label = "Scrolls",
+            buttons = {
+                left = { "Restore" },
+                right = { "Accept" }
+            },
+            groups = {
+                "ScrollsPanel",
+                "ScrollsPanelBgColor",
+                "ScrollsPanelTextBgColor",
             }
         },
     }, "Arts")
