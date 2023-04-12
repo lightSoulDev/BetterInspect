@@ -1661,7 +1661,7 @@ function UI.render()
                     end
 
                     discreteSlider:SetPos(UI_SETTINGS[id].value)
-                    valueLabel:SetVal("text", tostring(UI_SETTINGS[id].value + UI_SETTINGS[id].offset))
+                    valueLabel:SetVal("text", tostring(UI_SETTINGS[id].value + (UI_SETTINGS[id].offset or 0)))
                     -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
                     -- =-                  I N P U T                  -=
                     -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
