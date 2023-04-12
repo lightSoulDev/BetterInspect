@@ -584,7 +584,7 @@ end
 
 local function onMainAccept()
     saveSettings()
-    UI.toggle()
+    -- UI.toggle()
 end
 
 local function onMainRestore()
@@ -601,7 +601,7 @@ local function onMainRestore()
             if (v.type == "Checkbox" or v.type == "Input") then
                 UI_SETTINGS[k].value = v.defaultValue
             elseif (v.type == "Slider") then
-                UI_SETTINGS[k].value = v.defaultValue + UI_SETTINGS[k].offset
+                UI_SETTINGS[k].value = v.defaultValue
             elseif (v.type == "List") then
                 UI_SETTINGS[k].index = v.defaultIndex
                 UI_SETTINGS[k].value = v.options[v.defaultIndex]
@@ -1208,6 +1208,8 @@ function UI.render()
         active_btn:Show(false)
     end
 
+    ACTIVE_BUTTONS = {}
+
     local tabSettings = getTab(TABS, CURRENT_TAB)
     if (tabSettings) then
         if (tabSettings.buttons) then
@@ -1231,6 +1233,7 @@ function UI.render()
                         button:SetVal("label", ToWS(GetLocaleText("Button" .. (v))))
 
                         WtSetPlace(button, { alignX = 1, highPosX = (45 + (i - 1) * 115) })
+
                         table.insert(ACTIVE_BUTTONS, button)
                     end
                 end
@@ -1253,8 +1256,20 @@ function UI.render()
         local frameH = ((#settings) * 45) + 30
         local extraPadding = 0
 
-        local groupFrame = CreateWG("BackFrame", "BG", mainForm, true,
-            { alignX = 3, posX = 0, highPosX = 0, alignY = 0, sizeY = frameH })
+        local groupFrameDest = mainForm:GetChildUnchecked(grouplabel, false)
+        local groupFrame = nil
+        if (groupFrameDest) then
+            groupFrame = groupFrameDest
+            for k, v in pairs(groupFrame:GetNamedChildren()) do
+                if (v ~= nil and v:GetName() ~= "GroupHeader") then
+                    v:DestroyWidget()
+                end
+            end
+        else
+            groupFrame = CreateWG("BackFrame", grouplabel, mainForm, true,
+                { alignX = 3, posX = 0, highPosX = 0, alignY = 0, sizeY = frameH })
+        end
+
         groupFrame:Show(true)
 
         local header = groupFrame:GetChildChecked("GroupHeader", false):GetChildChecked("HeaderText", false)

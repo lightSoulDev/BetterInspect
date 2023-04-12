@@ -254,51 +254,49 @@ local function drawStatPanels(unitId)
     hidePanelDnDInfo(statsAtcMainPanel, false)
     hidePanelDnDInfo(statsDefMainPanel, false)
 
+    if (not UI.get(panels["StatsAtc"].setting, "ShowAdd") and
+        not UI.get(panels["StatsDef"].setting, "ShowAdd") and
+        not UI.get(panels["StatsAtcMain"].setting, "ShowMain") and
+        not UI.get(panels["StatsDefMain"].setting, "ShowMain")) then
+        return
+    end
+
     local stats = {
         ["ritual"] = 0,
         ["power"] = 0,
         ["stamina"] = 0
     }
 
-    local powerArtLevel = 0
+    local inspectedItems = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 26, 11, 12, 13, 14, 15, 16 }
 
-    for i = 0, 41 do
+    for i, slot in pairs(eqSlotsInspect) do
         local itemId = unit.GetEquipmentItemId(unitId, i, ITEM_CONT_EQUIPMENT)
         if (itemId == nil) then goto continue_stats end
         local info = itemLib.GetItemInfo(itemId)
         if (info == nil) then goto continue_stats end
-        if (i >= 38 and i <= 40) then
-            if (ARTS_POWER[FromWS(info.name)]) then
-                powerArtLevel = info.level or 0
-            end
-        elseif (eqSlotsInspect[i]) then
-            local itemBonus = itemLib.GetBonus(itemId)
-            if (itemBonus == nil) then goto continue_stats end
-            if (itemBonus.miscStats) then
-                if itemBonus.miscStats.power then
-                    stats["power"] = stats["power"] + itemBonus.miscStats.power.effective
-                end
-                if (itemBonus.miscStats.stamina) then
-                    stats["stamina"] = stats["stamina"] + itemBonus.miscStats.stamina.effective
-                end
-            end
 
-            for k, v in pairs(itemBonus.specStats) do
-                if (v ~= nil and v.tooltipName ~= nil and v.value ~= nil) then
-                    local statName = FromWS(v.tooltipName)
-                    if (stats[statName] == nil) then
-                        stats[statName] = 0
-                    end
-                    stats[statName] = stats[statName] + v.value
+        local itemBonus = itemLib.GetBonus(itemId)
+        if (itemBonus == nil) then goto continue_stats end
+        if (itemBonus.miscStats) then
+            if itemBonus.miscStats.power then
+                stats["power"] = stats["power"] + itemBonus.miscStats.power.effective
+            end
+            if (itemBonus.miscStats.stamina) then
+                stats["stamina"] = stats["stamina"] + itemBonus.miscStats.stamina.effective
+            end
+        end
+
+        for k, v in pairs(itemBonus.specStats) do
+            if (v ~= nil and v.tooltipName ~= nil and v.value ~= nil) then
+                local statName = FromWS(v.tooltipName)
+                if (stats[statName] == nil) then
+                    stats[statName] = 0
                 end
+                stats[statName] = stats[statName] + v.value
             end
         end
 
         ::continue_stats::
-    end
-
-    if (powerArtLevel > 0) then
-        stats["power"] = stats["power"] + (powerArtLevel * 25) + 250
     end
 
     local atc_count = 0
@@ -342,6 +340,9 @@ local function drawStatPanels(unitId)
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
+
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
+        WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * atc_count, sizeY = size })
     end
     if (def_count > 0) then
         local panelInfo = panels["StatsDef"]
@@ -351,6 +352,9 @@ local function drawStatPanels(unitId)
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
+
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
+        WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * def_count, sizeY = size })
     end
     if (atc_main_count > 0) then
         local panelInfo = panels["StatsAtcMain"]
@@ -360,6 +364,9 @@ local function drawStatPanels(unitId)
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
+
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
+        WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * atc_main_count, sizeY = size })
     end
     if (def_main_count > 0) then
         local panelInfo = panels["StatsDefMain"]
@@ -369,6 +376,9 @@ local function drawStatPanels(unitId)
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
+
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
+        WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * def_main_count, sizeY = size })
     end
 end
 
@@ -469,6 +479,9 @@ local function drawExtras(unitId)
         extraPanel:SetBackgroundColor(UI.getGroupColor("ExtraPanelBgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         extraPanel:Show(true)
+
+        local size = UI.get("ExtraPanel", "IconSize") or 40
+        WtSetPlace(extraPanel, { sizeX = (size + 1) * count, sizeY = size })
     end
 end
 
@@ -712,6 +725,9 @@ local function onTargetChange(p)
         drawScrolls(avatar.GetId())
         drawExtras(avatar.GetId())
     end
+
+    -- LogWidget(mainForm)
+    -- Log(LogWidgetChildrenCount(mainForm))
 end
 
 local function onTimer(p)

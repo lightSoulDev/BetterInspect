@@ -50,6 +50,8 @@ local function withLevel(message, level)
     return prefix .. message
 end
 
+local count = 0
+
 function LogWidget(widget, level)
     if level == nil then
         Debug("Widget: " .. widget:GetName())
@@ -59,4 +61,18 @@ function LogWidget(widget, level)
         Debug(withLevel("[" .. k .. "] " .. v:GetName(), level))
         LogWidget(v, level + 1)
     end
+end
+
+function LogWidgetChildrenCount(widget, level)
+    if level == nil then
+        Debug("Widget: " .. widget:GetName())
+        level = 1
+        count = 0
+    end
+    for k, v in pairs(widget:GetNamedChildren()) do
+        count = count + 1
+        LogWidgetChildrenCount(v, level + 1)
+    end
+
+    return count
 end

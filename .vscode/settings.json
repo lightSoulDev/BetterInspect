@@ -38,6 +38,7 @@
         "ET_RESIZE",
         "LANG",
         "ITEM_CONT_EQUIPMENT",
-        "itemLib"
+        "itemLib",
+        "LogInfoCommon"
     ]
 }
