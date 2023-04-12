@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIRelatedTextures>
+	<Items>
+		<Item>
+			<name>ArtefactTopLeveling</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtefactTopLeveling.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactGodsLegacy</name>
+			<textureItem href="/Interface/Icons/Spells/DragonValor.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactTopLevelingInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtefactTopLevelingInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactWhip</name>
+			<textureItem href="/Interface/Icons/Misc/Crafting/NoProperty.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactWill</name>
+			<textureItem href="/Interface/Icons/Spells/FatalityDemon.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactCup</name>
+			<textureItem href="/Interface/Icons/Spells/Paladin/RevengeRage.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactArrow</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/ExecutionerHalo.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactBook</name>
+			<textureItem href="/Interface/Icons/Misc/Quest/ArtifactColorBlood.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactBoot</name>
+			<textureItem href="/Interface/Icons/Equipment/Leather/LeatherBoots03.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactBrooch</name>
+			<textureItem href="/Interface/Icons/Misc/Quest/MysticArtifacts.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactCloak</name>
+			<textureItem href="/Interface/Icons/Equipment/Cloak/ChampionCloakHAv2.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactDagger</name>
+			<textureItem href="/Interface/Icons/Spells/Warrior/WarriorBlessedSwordUpgrade.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactKadilo</name>
+			<textureItem href="/Interface/Icons/Equipment/Trinket/Kadilo.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactLoreyley</name>
+			<textureItem href="/Interface/Icons/Equipment/Helm/LorePriestHelm.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactMayve</name>
+			<textureItem href="/Interface/Icons/Misc/Quest/TriumphOfSpirit.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactMelusina</name>
+			<textureItem href="/Interface/Icons/Misc/Quest/ArmorZak06.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactNefer</name>
+			<textureItem href="/Interface/Icons/Spells/Demonologist/EvilWill.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactProspero</name>
+			<textureItem href="/Interface/Icons/Misc/Event/ShieldCarrier.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactShield</name>
+			<textureItem href="/Interface/Icons/Mounts/SpellsMounts/ExoShield02.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactStaff</name>
+			<textureItem href="/Interface/Icons/Spells/Priest/ExpelDemon.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactYoke</name>
+			<textureItem href="/Interface/Icons/Equipment/Shoulders/CultistPaladinShoulder.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<!-- Support Old Clients -->
+		<Item>
+			<name>ArtefactKB</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/CodexOfLife.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactKP</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactVictory.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactTE</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactUnity.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactAD</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/AspisDragon.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactKS</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactWandererCrown.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactGP</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/BlackGrail.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactZS</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactFreedom.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>ArtefactKBInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/CodexOfLifeInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactKPInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactVictoryInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactTEInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactUnityInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactADInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/AspisDragonInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactKSInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactWandererCrownInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactGPInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/BlackGrailInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>ArtefactZSInactive</name>
+			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactFreedomInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<!-- Stats -->
+		<Item>
+			<name>StatLuck</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatGosp</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalDamageElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatRage</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMAntiHealElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatFastCast</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCooldownElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatStun</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMDoubleAttackElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatVitality</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMVitalityElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatAntiCrit</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMConcentrationElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatCaution</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCautionElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatAntiStun</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMInviolabilityElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatSpeed</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IntellectElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatMastery</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMPlainDamageElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatResolution</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMRageElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatFinisher</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMFinisherElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatStamina</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMHealthaddElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatWill</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMWillElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatLifesteal</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMLifestealElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+	</Items>
+</UIRelatedTextures>

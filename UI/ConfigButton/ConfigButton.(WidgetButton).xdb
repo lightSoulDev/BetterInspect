@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Name>ConfigButton</Name>
+	<Priority>0</Priority>
+	<IgnoreDblClick>true</IgnoreDblClick>
+	<Header>
+		<Prototype href="/Mods/SampleCommon/Button/ButtonRegular.Prototype.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+	</Header>
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>32</Pos>
+			<Size>32</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>32</Pos>
+			<Size>32</Size>
+		</Y>
+	</Placement>
+	<Enabled>true</Enabled>
+	<Variants>
+		<Item>
+			<TextFileRef href="ConfigButton.txt" />
+			<Reaction>ConfigLeftClick</Reaction>
+			<ReactionRightClick>ConfigRightClick</ReactionRightClick>
+		</Item>
+	</Variants>
+</WidgetButton>

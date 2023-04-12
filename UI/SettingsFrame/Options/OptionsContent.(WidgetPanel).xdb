@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>OptionsContent</Name>
+	<BackLayer href="" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+			<Pos>6</Pos>
+			<HighPos>32</HighPos>
+			<Size>0</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+			<Pos>12</Pos>
+			<HighPos>12</HighPos>
+		</Y>
+	</Placement>
+</WidgetPanel>

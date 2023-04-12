@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetTextView>
+	<Name>Text_1</Name>
+	<BackLayer href="" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>402</Pos>
+			<Size>104</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>4</Pos>
+			<Size>24</Size>
+		</Y>
+	</Placement>
+	<TransparentInput>true</TransparentInput>
+	<FormatFileRef href="Text_1.txt" />
+	<TextStyle>
+		<Align>ALIGNY_MIDDLE</Align>
+	</TextStyle>	
+</WidgetTextView>

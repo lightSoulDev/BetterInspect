@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetTextView>
+	<Name>Text_4</Name>
+	<Priority>1</Priority>
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>502</Pos>
+			<Size>104</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<HighPos>4</HighPos>
+			<Size>24</Size>
+		</Y>
+	</Placement>
+	<FormatFileRef href="Text_4.txt" />
+	<TextStyle>
+		<Align>ALIGNY_MIDDLE</Align>
+	</TextStyle>	
+</WidgetTextView>

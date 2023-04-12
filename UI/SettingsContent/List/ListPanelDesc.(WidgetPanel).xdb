@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>ListPanelDesc</Name>
+	<Priority>100</Priority>
+	<Children>
+		<Item href="ListPanelDescText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+	</Children>
+	<BackLayer href="../Common/ContentFrame.(WidgetLayerTiledTexture).xdb#xpointer(/WidgetLayerTiledTexture)" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<Pos>0</Pos>
+			<HighPos>35</HighPos>
+			<Size>187</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_CENTER</Align>
+			<Size>28</Size>
+		</Y>
+	</Placement>
+</WidgetPanel>

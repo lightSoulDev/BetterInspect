@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Header>
+		<isPrototype>true</isPrototype>
+	</Header>
+	<Priority>250</Priority>
+	<Placement>
+		<X>
+			<Size>105</Size>
+		</X>
+		<Y>
+			<Size>30</Size>
+		</Y>
+	</Placement>
+	<IgnoreDblClick>true</IgnoreDblClick>
+	<TextTag>label</TextTag>
+	<Variants>
+		<Item>
+			<LayerHighlight href="../Common/ButtonHighlighted.(WidgetLayerTiledTexture).xdb#xpointer(/WidgetLayerTiledTexture)" />
+			<PushedOffset x="-1" y="1" />
+			<StateNormal>
+				<FormatFileRef href="ButtonFormat.txt" />
+				<LayerMain href="" />
+			</StateNormal>
+			<StatePushed>
+				<LayerMain href="" />
+			</StatePushed>
+			<StateDisabled>
+				<FormatFileRef href="ButtonFormat.txt" />	
+				<LayerMain href="" />
+			</StateDisabled>
+			<ReactionOnUp>true</ReactionOnUp>
+			<ReactionOnPointing>button_over</ReactionOnPointing>
+		</Item>
+	</Variants>
+	<TextStyle>
+		<Align>ALIGNY_MIDDLE</Align>
+	</TextStyle>
+</WidgetButton>

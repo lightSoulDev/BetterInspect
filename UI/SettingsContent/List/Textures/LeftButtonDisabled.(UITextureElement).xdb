@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<UITextureElement>
+	<singleTexture href="LeftButtonDisabled.(UITexture).xdb#xpointer(/UITexture)" />
+	<permanentCache>0</permanentCache>
+	<sourceFile href="LeftButtonDisabled.tga" />
+	<sourceFileCRC>-1629388999</sourceFileCRC>
+</UITextureElement>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Header>
+		<Prototype href="CheckboxStone.Prototype.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+	</Header>
+	<Name>ItemSettingCheckbox</Name>
+	<Priority>0</Priority>
+	<Children />
+	<BackLayer href="" />
+	<FrontLayer href="" />
+	<pickMask href="" />
+	<Placement>
+		<QuantumScale>false</QuantumScale>
+		<X>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
+			<Pos>0</Pos>
+			<HighPos>25</HighPos>
+			<Size>24</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_CENTER</Align>
+			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
+			<Pos>0</Pos>
+			<HighPos>0</HighPos>
+			<Size>24</Size>
+		</Y>
+	</Placement>
+	<Visible>true</Visible>
+	<Enabled>true</Enabled>
+	<TabOrder>0</TabOrder>
+	<TransparentInput>false</TransparentInput>
+	<PickChildrenOnly>false</PickChildrenOnly>
+	<IgnoreDblClick>false</IgnoreDblClick>
+	<TextTag>text</TextTag>
+	<Variants>
+		<Item>
+			<LayerHighlight href="Textures/CheckboxStoneHighlight.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			<StateNormal>
+				<LayerMain href="Textures/CheckboxStone.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StateNormal>
+			<Reaction>setting_cb</Reaction>
+			<ReactionOnUp>true</ReactionOnUp>
+			<ReactionOnPointing>checkbox_over</ReactionOnPointing>
+		</Item>
+		<Item>
+			<LayerHighlight href="Textures/CheckboxStoneHighlight.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			<StateNormal>
+				<LayerMain href="Textures/CheckboxStoneChecked.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StateNormal>
+			<Reaction>setting_cb</Reaction>
+			<ReactionOnUp>true</ReactionOnUp>
+			<ReactionOnPointing>checkbox_over</ReactionOnPointing>
+		</Item>
+	</Variants>
+</WidgetButton>

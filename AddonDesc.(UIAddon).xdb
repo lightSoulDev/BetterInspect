@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIAddon>
+  <AutoStart>true</AutoStart>
+  <Forms>
+    <Item>
+      <Form href="UI/MainForm.(WidgetForm).xdb#xpointer(/WidgetForm)" />
+      <Id>Main</Id>
+    </Item>
+  </Forms>
+  <MainFormId>Main</MainFormId>
+  <Name>BetterInspect</Name>
+  <ScriptFileRefs>
+    <Item href="/Mods/SampleCommon/SampleAddonBase.lua" />
+    <Item href="src/locale.lua" />
+
+    <Item href="src/libs/Logger.lua" />
+    <Item href="src/libs/Utils.lua" />
+    <Item href="src/libs/DnD.lua" />
+    <Item href="src/libs/SettingsUI.lua" />
+
+    <Item href="src/arts.lua" />
+    <Item href="src/mainscript.lua" />
+  </ScriptFileRefs>
+  <addon_name>FID</addon_name>
+  <localizedNameFileRef href="name.txt" />
+  <localizedDescFileRef href="desc.txt" />
+  <texturesGroups>
+    <Item>
+      <groupName>RELATED_TEXTURES</groupName>
+      <textures href="RelatedTextures.(UIRelatedTextures).xdb#xpointer(/UIRelatedTextures)"/>
+    </Item>
+    <Item>
+      <groupName>CUSTOM_ICONS</groupName>
+      <textures href="CustomIcons.(UIRelatedTextures).xdb#xpointer(/UIRelatedTextures)"/>
+    </Item>
+  </texturesGroups>
+  <addon_date>1558901818</addon_date>
+  <addon_link>https://alloder.pro/files/file/622-FID/?do=download&amp;r=24252&amp;confirm=1&amp;t=1&amp;csrfKey=</addon_link>
+</UIAddon>

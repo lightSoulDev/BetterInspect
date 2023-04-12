@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+    <Name>SettingsMain</Name>
+	<Priority>10000</Priority>
+	<Children>
+        <Item href="Options/OptionsContainer.(WidgetScrollableContainer).xdb#xpointer(/WidgetScrollableContainer)" />
+		<Item href="SettingsFrame/SettingsFrame.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+        <Item href="CornerCross/CornerCross.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+        <Item href="WindowHeader/WindowHeader.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+        <Item href="Options/SliderFrame.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+
+        <Item href="Buttons/ButtonRestore.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+        <Item href="Buttons/ButtonAccept.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+
+        <Item href="Tabs/Tab.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+	</Children>
+	<Placement>
+		<QuantumScale>false</QuantumScale>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+            <Pos>0</Pos>
+			<Size>700</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_LOW</Align>
+            <Pos>0</Pos>
+			<Size>700</Size>
+		</Y>
+	</Placement>
+	<TransparentInput>false</TransparentInput>
+	<Visible>false</Visible>
+    <PickChildrenOnly>true</PickChildrenOnly>
+	<clipContent>false</clipContent>
+</WidgetPanel>

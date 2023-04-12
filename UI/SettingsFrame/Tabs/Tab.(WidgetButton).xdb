@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Header>
+		<Prototype href="BottomTabs/BottomTab.Prototype.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+	</Header>
+	<Name>TabTemplate</Name>
+	<Placement>
+		<X>
+			<Pos>35</Pos>
+			<Size>120</Size>
+		</X>
+		<Y>
+			<HighPos>29</HighPos>
+		</Y>
+	</Placement>
+	<Visible>false</Visible>
+	<Enabled>false</Enabled>
+	<Variants>
+		<Item>
+			<TextFileRef href="" />
+			<PushedOffset x="1" y="1" />
+			<Reaction>tab_pressed</Reaction>
+			<ReactionOnPointing />
+		</Item>
+		<Item>
+			<TextFileRef href="" />
+		</Item>
+	</Variants>
+</WidgetButton>

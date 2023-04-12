@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Name>SliderButton</Name>
+	<Placement>
+		<X>
+			<Size>36</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_CENTER</Align>
+			<Size>24</Size>
+			<Pos>0</Pos>
+		</Y>
+	</Placement>
+	<Visible>true</Visible>
+	<Enabled>true</Enabled>
+	<Variants>
+		<Item>
+			<LayerHighlight href="../Common/ScrollButtonHighlight.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			<StateNormal>
+				<LayerMain href="Textures/ScrollSliderBtnNormal.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StateNormal>
+			<StatePushed>
+				<LayerMain href="Textures/ScrollSliderBtnPressed.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StatePushed>
+			<StateDisabled>
+				<LayerMain href="Textures/ScrollSliderBtnDisabled.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StateDisabled>
+		</Item>
+	</Variants>
+	<useDefaultSounds>true</useDefaultSounds>
+</WidgetButton>

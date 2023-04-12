@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>SliderPanelBar</Name>
+	<Priority>100</Priority>
+	<Children>
+		<Item href="Slider.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="SliderPanelBarText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+	</Children>
+	<BackLayer href="" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<Pos>0</Pos>
+			<HighPos>8</HighPos>
+			<Size>273</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_CENTER</Align>
+			<Size>28</Size>
+		</Y>
+	</Placement>
+</WidgetPanel>

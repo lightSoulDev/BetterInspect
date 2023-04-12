@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIRelatedTextures>
+	<Items>
+		<Item>
+			<name>*Длительный контроль*</name>
+			<textureItem href="/Interface/Icons/Spells/Bard/DoubleVirtue.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+	</Items>
+</UIRelatedTextures>

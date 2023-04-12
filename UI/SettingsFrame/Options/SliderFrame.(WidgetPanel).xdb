@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>SliderFrame</Name>
+	<Priority>100</Priority>
+	<BackLayer href="SliderFrame.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<Pos>0</Pos>
+			<HighPos>11</HighPos>
+			<Size>39</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+			<Pos>48</Pos>
+			<HighPos>91</HighPos>
+		</Y>
+	</Placement>
+</WidgetPanel>

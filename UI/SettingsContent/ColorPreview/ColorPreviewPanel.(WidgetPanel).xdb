@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>ColorPreviewPanel</Name>
+	<Priority>100</Priority>
+	<Children>
+		<Item href="ColorPreviewPanelText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="ColorPreviewIcon.(WidgetPanel).xdb" />
+	</Children>
+	<BackLayer href="../Common/OptionTiledFrame.(WidgetLayerTiledTexture).xdb#xpointer(/WidgetLayerTiledTexture)" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+		</X>
+		<Y>
+			<Pos>0</Pos>
+			<Size>44</Size>
+		</Y>
+	</Placement>
+	<Visible>false</Visible>
+	<Enabled>true</Enabled>
+</WidgetPanel>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetTextView>
+	<Name>SliderPanelBarText</Name>
+	<BackLayer href="" />
+	<Priority>200</Priority>
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>6</Pos>
+			<Size>50</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+			<Pos>1</Pos>
+		</Y>
+	</Placement>
+	<TransparentInput>true</TransparentInput>
+	<FormatFileRef href="SliderBarText.txt" />
+	<TextStyle>
+		<Align>ALIGNY_MIDDLE</Align>
+	</TextStyle>
+	<TransparentInput>true</TransparentInput>
+</WidgetTextView>

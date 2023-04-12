@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>SettingsFrame</Name>
+	<Priority>0</Priority>
+	<BackLayer href="SettingsFrame.(WidgetLayerTiledTexture).xdb#xpointer(/WidgetLayerTiledTexture)" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+			<Pos>20</Pos>
+			<HighPos>25</HighPos>
+		</Y>
+	</Placement>
+</WidgetPanel>

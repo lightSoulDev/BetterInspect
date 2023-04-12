@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>InputPanelBg</Name>
+	<Priority>100</Priority>
+	<Children>
+		<Item href="EditLine.(WidgetEditLine).xdb#xpointer(/WidgetEditLine)" />
+		<Item href="EditLineRu.(WidgetEditLine).xdb#xpointer(/WidgetEditLine)" />
+		<Item href="EditLineNum.(WidgetEditLine).xdb#xpointer(/WidgetEditLine)" />
+		<Item href="EditLineInt.(WidgetEditLine).xdb#xpointer(/WidgetEditLine)" />
+	</Children>
+	<BackLayer href="../Common/ContentFrame.(WidgetLayerTiledTexture).xdb#xpointer(/WidgetLayerTiledTexture)" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<Pos>0</Pos>
+			<HighPos>8</HighPos>
+			<Size>56</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_CENTER</Align>
+			<Size>28</Size>
+		</Y>
+	</Placement>
+</WidgetPanel>

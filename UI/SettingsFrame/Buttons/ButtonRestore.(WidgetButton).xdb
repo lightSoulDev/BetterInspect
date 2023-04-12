@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Header>
+		<Prototype href="Prototype/Button.Prototype.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+	</Header>
+	<Name>ButtonRestore</Name>
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>35</Pos>
+			<Size>110</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<HighPos>68</HighPos>
+		</Y>
+	</Placement>
+	<Variants>
+		<Item>
+			<TextFileRef href="ButtonRestore.txt" />
+			<Reaction>main_restore_pressed</Reaction>
+			<ReactionOnPointing />
+		</Item>
+	</Variants>
+
+	<Visible>false</Visible>
+	<Enabled>true</Enabled>
+</WidgetButton>

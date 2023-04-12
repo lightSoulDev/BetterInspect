@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Placement>
+		<X>
+			<Size>21</Size>
+		</X>
+		<Y>
+			<Pos>16</Pos>
+			<Size>21</Size>
+		</Y>
+	</Placement>
+	<IgnoreDblClick>true</IgnoreDblClick>
+	<Variants>
+		<Item>
+			<LayerHighlight href="ScrollBars/ScrollButtonHighlight.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			<StateNormal>
+				<LayerMain href="ScrollBars/ScrollUp.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StateNormal>
+			<StatePushed>
+				<LayerMain href="ScrollBars/ScrollUpPressed.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StatePushed>
+			<StateDisabled>
+				<LayerMain href="ScrollBars/ScrollUpDisabled.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+			</StateDisabled>
+		</Item>
+	</Variants>
+</WidgetButton>

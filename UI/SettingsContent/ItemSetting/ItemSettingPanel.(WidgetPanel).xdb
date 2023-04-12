@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>ItemSettingPanel</Name>
+	<Priority>100</Priority>
+	<Children>
+		<Item href="IconSpell.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="ItemSettingPanelText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="EnableCheckbox.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+
+		<Item href="ButtonDelete.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+
+		<Item href="Checkboxes/CB_1.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+		<Item href="Checkboxes/CB_2.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+		<Item href="Checkboxes/CB_3.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+		<Item href="Checkboxes/CB_4.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+		<Item href="Checkboxes/CB_5.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+		<Item href="Checkboxes/CB_6.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+
+		<Item href="Checkboxes/Text_1.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Checkboxes/Text_2.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Checkboxes/Text_3.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Checkboxes/Text_4.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Checkboxes/Text_5.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Checkboxes/Text_6.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+
+	</Children>
+	<BackLayer href="../Common/OptionTiledFrame.(WidgetLayerTiledTexture).xdb#xpointer(/WidgetLayerTiledTexture)" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+		</X>
+		<Y>
+			<Pos>0</Pos>
+			<Size>66</Size>
+		</Y>
+	</Placement>
+	<Visible>false</Visible>
+	<Enabled>true</Enabled>
+</WidgetPanel>

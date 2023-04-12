@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+  <Name>CB_5</Name>
+  <Priority>2</Priority>
+  <Header>
+    <Prototype href="CheckBoxStone.Prototype.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+  </Header>
+  <Placement>
+    <X>
+      <Align>WIDGET_ALIGN_LOW</Align>
+      <Pos>371</Pos>
+    </X>
+    <Y>
+      <Align>WIDGET_ALIGN_LOW</Align>
+      <Pos>4</Pos>
+    </Y>
+  </Placement>
+</WidgetButton>
