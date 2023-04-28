@@ -101,6 +101,8 @@ local iconTemplate = mainForm:GetChildChecked("InspectIcon", false)
 local panelTemplate = mainForm:GetChildChecked("Panel", false)
 local cfgBtn = mainForm:GetChildChecked("ConfigButton", false)
 
+local lastInspectUnitId = nil
+
 local activeInspectWidgets = {}
 
 local function showPanelDnDInfo(panelWidget)
@@ -157,18 +159,7 @@ local function clearActiveInspect()
 end
 
 local function onWidgetShowChanged(p)
-    Log("onWidgetShowChanged: " .. p.widget:GetName())
-end
-
-local function onInspect(p)
-    Log("onInspect: ")
-
-    local tab = unit.GetEquipmentItemIds(avatar.GetTarget(), ITEM_CONT_EQUIPMENT)
-    if (tab == nil) then return end
-
-    if (avatar.IsTargetInspected()) then
-
-    end
+    -- Log("onWidgetShowChanged: " .. p.widget:GetName())
 end
 
 -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -201,11 +192,11 @@ local function drawStatIcon(name, value, textureId, panelInfo, count)
         local countWidget = CreateWG("Text", "Count", textBg or widget, true,
             {
                 alignX = 0,
-                sizeX = 40,
+                sizeX = size,
                 posX = 0,
                 highPosX = 0,
                 alignY = 0,
-                sizeY = 40,
+                sizeY = size,
                 posY = 3,
                 highPosY = 0
             }
@@ -234,7 +225,10 @@ local function drawStatIcon(name, value, textureId, panelInfo, count)
         table.insert(activeInspectWidgets, countWidget)
     end
 
-    local texture = GetGroupTexture("RELATED_TEXTURES", textureId)
+    local texture = GetGroupTexture(UI.get(setting, "TextureStyle") or "RELATED_TEXTURES", textureId)
+    if (texture == nil) then
+        texture = GetGroupTexture("RELATED_TEXTURES", textureId)
+    end
     if (texture ~= nil) then
         if (widget ~= nil) then
             widget:SetBackgroundTexture(texture)
@@ -255,9 +249,9 @@ local function drawStatPanels(unitId)
     hidePanelDnDInfo(statsDefMainPanel, false)
 
     if (not UI.get(panels["StatsAtc"].setting, "ShowAdd") and
-        not UI.get(panels["StatsDef"].setting, "ShowAdd") and
-        not UI.get(panels["StatsAtcMain"].setting, "ShowMain") and
-        not UI.get(panels["StatsDefMain"].setting, "ShowMain")) then
+            not UI.get(panels["StatsDef"].setting, "ShowAdd") and
+            not UI.get(panels["StatsAtcMain"].setting, "ShowMain") and
+            not UI.get(panels["StatsDefMain"].setting, "ShowMain")) then
         return
     end
 
@@ -299,6 +293,28 @@ local function drawStatPanels(unitId)
         ::continue_stats::
     end
 
+    -- local ALL_STATS = {
+    --     [0] = "Мастерство",
+    --     [1] = "Беспощадность",
+    --     [2] = "Решимость",
+    --     [3] = "Господство",
+    --     [4] = "Удача",
+    --     [5] = "Ярость",
+    --     [6] = "Упорство",
+    --     [7] = "Стремительность",
+    --     [8] = "Стойкость",
+    --     [9] = "Воля",
+    --     [10] = "Кровожадность",
+    --     [11] = "Живучесть",
+    --     [12] = "Инстинкт",
+    --     [13] = "Осторожность",
+    --     [14] = "Незыблемость",
+    -- }
+
+    -- for k, v in pairs(ALL_STATS) do
+    --     stats[v] = 1
+    -- end
+
     local atc_count = 0
     local def_count = 0
     local atc_main_count = 0
@@ -335,49 +351,49 @@ local function drawStatPanels(unitId)
     if (atc_count > 0) then
         local panelInfo = panels["StatsAtc"]
 
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel,
-            { sizeX = (40 + 1) * atc_count, sizeY = 40 })
+            { sizeX = (size + 1) * atc_count, sizeY = size })
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
 
-        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * atc_count, sizeY = size })
     end
     if (def_count > 0) then
         local panelInfo = panels["StatsDef"]
 
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel,
-            { sizeX = (40 + 1) * def_count, sizeY = 40 })
+            { sizeX = (size + 1) * def_count, sizeY = size })
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
 
-        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * def_count, sizeY = size })
     end
     if (atc_main_count > 0) then
         local panelInfo = panels["StatsAtcMain"]
 
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel,
-            { sizeX = (40 + 1) * atc_main_count, sizeY = 40 })
+            { sizeX = (size + 1) * atc_main_count, sizeY = size })
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
 
-        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * atc_main_count, sizeY = size })
     end
     if (def_main_count > 0) then
         local panelInfo = panels["StatsDefMain"]
 
+        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel,
-            { sizeX = (40 + 1) * def_main_count, sizeY = 40 })
+            { sizeX = (size + 1) * def_main_count, sizeY = size })
         panelInfo.panel:SetBackgroundColor(UI.getGroupColor(panelInfo.setting .. "BgColor") or
             { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
         panelInfo.panel:Show(true)
 
-        local size = UI.get(panelInfo.setting, "IconSize") or 40
         WtSetPlace(panelInfo.panel, { sizeX = (size + 1) * def_main_count, sizeY = size })
     end
 end
@@ -458,6 +474,10 @@ local function drawExtras(unitId)
 
             if (UI.get("ExtraPanel", "UseRomansForBanners")) then
                 levelString = romanNumerals[level]
+            end
+
+            if (BANNERS[name] == nil) then
+                levelString = " "
             end
 
             textWidget:SetVal("name", tostring(levelString))
@@ -610,7 +630,7 @@ end
 -- =-              D R A W   A R T S              -=
 -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-local function drawMyArtsPanel()
+local function drawMyArtsPanel(unitId)
     hidePanelDnDInfo(artsPanel, false)
     if (not UI.get("ArtsPanel", "Show")) then return end
 
@@ -623,7 +643,7 @@ local function drawMyArtsPanel()
 
     -- Artefact slots (38, 39, 40)
     for i = 38, 40 do
-        local itemId = unit.GetEquipmentItemId(avatar.GetId(), i, ITEM_CONT_EQUIPMENT)
+        local itemId = unit.GetEquipmentItemId(unitId, i, ITEM_CONT_EQUIPMENT)
         if (itemId == nil) then goto continue_arts end
         local info = itemLib.GetItemInfo(itemId)
         if (info == nil) then goto continue_arts end
@@ -705,8 +725,25 @@ local function drawMyArtsPanel()
     end
 end
 
+local function onInspectStarted(p)
+    local unitId = avatar.GetTarget()
+    if (unitId == lastInspectUnitId) then return end
+    local tab = unit.GetEquipmentItemIds(unitId, ITEM_CONT_EQUIPMENT)
+    if (tab ~= nil) then
+
+    end
+
+    if (avatar.IsTargetInspected()) then
+        drawMyArtsPanel(unitId)
+        drawStatPanels(unitId)
+        drawScrolls(unitId)
+        drawExtras(unitId)
+    end
+end
+
 local function onTargetChange(p)
     clearActiveInspect()
+    lastInspectUnitId = nil
 
     hidePanel(artsPanel)
     hidePanel(statsAtcPanel)
@@ -720,10 +757,13 @@ local function onTargetChange(p)
     if (unitId == nil) then return end
 
     if (unitId == avatar.GetId()) then
-        drawMyArtsPanel()
+        drawMyArtsPanel(avatar.GetId())
         drawStatPanels(avatar.GetId())
         drawScrolls(avatar.GetId())
         drawExtras(avatar.GetId())
+    elseif (unit.IsPlayer(unitId) and avatar.IsInspectAllowed()) then
+        -- Log("Inspecting player " .. unitId)
+        avatar.StartInspect(unitId)
     end
 
     -- LogWidget(mainForm)
@@ -753,6 +793,8 @@ local function toggleDnD()
         end
     end
 
+    Log("Drag & Drop - " .. (DnDEnabled and "On." or "Off."))
+
     UI.dnd(DnDEnabled)
 end
 
@@ -771,6 +813,48 @@ local function onCfgRight()
 
     toggleDnD()
 end
+
+----------------------------------------------------------------------------------------------------
+-- AOPanel support
+
+local IsAOPanelEnabled = GetConfig("EnableAOPanel") or GetConfig("EnableAOPanel") == nil
+
+local function onAOPanelStart(p)
+    if IsAOPanelEnabled then
+        local SetVal = { val1 = userMods.ToWString("BI"), class1 = "RelicCursed" }
+        local params = { header = SetVal, ptype = "button", size = 32 }
+        userMods.SendEvent("AOPANEL_SEND_ADDON",
+            { name = common.GetAddonName(), sysName = common.GetAddonName(), param = params })
+
+        local cfgBtn = mainForm:GetChildChecked("ConfigButton", false)
+        if cfgBtn then
+            cfgBtn:Show(false)
+        end
+    end
+end
+
+local function onAOPanelLeftClick(p)
+    if p.sender == common.GetAddonName() then
+        onCfgLeft()
+    end
+end
+
+local function onAOPanelRightClick(p)
+    if p.sender == common.GetAddonName() then
+        onCfgRight()
+    end
+end
+
+local function onAOPanelChange(params)
+    if params.unloading and params.name == "UserAddon/AOPanelMod" then
+        local cfgBtn = mainForm:GetChildChecked("ConfigButton", false)
+        if cfgBtn then
+            cfgBtn:Show(true)
+        end
+    end
+end
+
+----------------------------------------------------------------------------------------------------
 
 local function setupUI()
     LANG = common.GetLocalization() or "rus"
@@ -802,15 +886,16 @@ local function setupUI()
     })
 
     UI.addGroup("StatsAtcPanel", {
-        UI.createCheckBox("ShowMain", true),
+        UI.createCheckBox("ShowMain", false),
         UI.createCheckBox("ShowAdd", true),
-        UI.createCheckBox("SeparateInTwo", true),
+        UI.createCheckBox("SeparateInTwo", false),
         UI.createSlider("IconSize", { stepsCount = 32, width = 212, offset = 32 }, 40),
         UI.createSlider("TextFontSize", { stepsCount = 20, width = 212, offset = 10 }, 15),
         UI.createList("TextAlignX", { "left", "center", "right" }, 3, false),
         UI.createList("TextAlignY", { "top", "middle", "bottom" }, 3, false),
         UI.createCheckBox("Round", true),
         UI.createCheckBox("TextBackground", false),
+        UI.createList("TextureStyle", { "RELATED_TEXTURES", "STAT_SMALL_POTION", "STAT_ELIXIR_PWR" }, 1, false),
     })
 
     UI.createColorGroup("StatsAtcPanelBgColor", {
@@ -828,15 +913,16 @@ local function setupUI()
     })
 
     UI.addGroup("StatsDefPanel", {
-        UI.createCheckBox("ShowMain", true),
+        UI.createCheckBox("ShowMain", false),
         UI.createCheckBox("ShowAdd", true),
-        UI.createCheckBox("SeparateInTwo", true),
+        UI.createCheckBox("SeparateInTwo", false),
         UI.createSlider("IconSize", { stepsCount = 32, width = 212, offset = 32 }, 40),
         UI.createSlider("TextFontSize", { stepsCount = 20, width = 212, offset = 10 }, 15),
         UI.createList("TextAlignX", { "left", "center", "right" }, 3, false),
         UI.createList("TextAlignY", { "top", "middle", "bottom" }, 3, false),
         UI.createCheckBox("Round", true),
         UI.createCheckBox("TextBackground", false),
+        UI.createList("TextureStyle", { "RELATED_TEXTURES", "STAT_SMALL_POTION", "STAT_ELIXIR_PWR" }, 1, false),
     })
 
     UI.createColorGroup("StatsDefPanelBgColor", {
@@ -867,7 +953,7 @@ local function setupUI()
         UI.createSlider("TextFontSize", { stepsCount = 20, width = 212, offset = 10 }, 15),
         UI.createList("TextAlignX", { "left", "center", "right" }, 3, false),
         UI.createList("TextAlignY", { "top", "middle", "bottom" }, 3, false),
-        UI.createCheckBox("ShowTempInfo", false),
+        -- UI.createCheckBox("ShowTempInfo", false),
         UI.createCheckBox("TextBackground", false),
     })
 
@@ -986,14 +1072,21 @@ function Init()
     common.RegisterEventHandler(onWidgetShowChanged, "EVENT_WIDGET_SHOW_CHANGED")
     -- common.RegisterEventHandler(onChangeInventorySlot, "EVENT_INVENTORY_SLOT_CHANGED")
     -- common.RegisterEventHandler(onChangeEqSlot, "EVENT_UNIT_EQUIPMENT_CHANGED")
-    common.RegisterEventHandler(onInspect, "EVENT_INSPECT_STARTED")
+    -- common.RegisterEventHandler(onInspect, "EVENT_INSPECT_STARTED")
     -- common.RegisterEventHandler(onInspectFinish, "EVENT_INSPECT_FINISHED")
     common.RegisterEventHandler(onTargetChange, "EVENT_AVATAR_TARGET_CHANGED")
+    common.RegisterEventHandler(onInspectStarted, "EVENT_INSPECT_STARTED")
 
     common.RegisterEventHandler(onTimer, "EVENT_SECOND_TIMER")
 
     common.RegisterReactionHandler(onCfgLeft, "ConfigLeftClick")
     common.RegisterReactionHandler(onCfgRight, "ConfigRightClick")
+
+    -- AOPanel
+    common.RegisterEventHandler(onAOPanelStart, "AOPANEL_START")
+    common.RegisterEventHandler(onAOPanelLeftClick, "AOPANEL_BUTTON_LEFT_CLICK")
+    common.RegisterEventHandler(onAOPanelRightClick, "AOPANEL_BUTTON_RIGHT_CLICK")
+    common.RegisterEventHandler(onAOPanelChange, "EVENT_ADDON_LOAD_STATE_CHANGED")
 
     DnDEnabled = false
 

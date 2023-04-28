@@ -6,12 +6,12 @@
 	<Placement>
 		<QuantumScale>false</QuantumScale>
 		<X>
-			<Align>WIDGET_ALIGN_CENTER</Align>
+			<Align>WIDGET_ALIGN_LOW</Align>
 			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
 			<Size>300</Size>
 		</X>
 		<Y>
-			<Align>WIDGET_ALIGN_CENTER</Align>
+			<Align>WIDGET_ALIGN_LOW</Align>
 			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
 			<Size>40</Size>
 		</Y>

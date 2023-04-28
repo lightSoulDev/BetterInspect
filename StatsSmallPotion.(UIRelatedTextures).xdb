@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIRelatedTextures>
+	<Items>
+		<!-- Stats -->
+		<Item>
+			<name>StatLuck</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatGosp</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalDamagePotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatRage</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMAntiHealPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatFastCast</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCooldownPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatStun</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMDoubleAttackPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatVitality</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/VitalityPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatAntiCrit</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/ConcentrationPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatCaution</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/CautionPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatAntiStun</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/InviolabilityPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatSpeed</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/InviolabilityPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatMastery</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMPlainDamagePotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatResolution</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMRagePotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatFinisher</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMFinisherPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatStamina</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMHealthaddPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatWill</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMWillPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatLifesteal</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMLifestealPotion.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+	</Items>
+</UIRelatedTextures>

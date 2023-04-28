@@ -55,7 +55,6 @@ STATS_DEF = {
     ['Инстинкт'] = "StatAntiCrit",
     ['Осторожность'] = "StatCaution",
     ['Незыблемость'] = "StatAntiStun",
-    ['Скорость'] = "StatSpeed",
 }
 
 ARTS_POWER = {

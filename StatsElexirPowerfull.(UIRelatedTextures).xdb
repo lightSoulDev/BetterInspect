@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIRelatedTextures>
+	<Items>
+		<!-- Stats -->
+		<Item>
+			<name>StatLuck</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatGosp</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalDamageElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatRage</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMAntiHealElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatFastCast</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCooldownElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatStun</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMDoubleAttackElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatVitality</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMVitalityElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatAntiCrit</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMConcentrationElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatCaution</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCautionElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatAntiStun</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMInviolabilityElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatSpeed</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMInviolabilityElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatMastery</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMPlainDamageElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatResolution</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMRageElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatFinisher</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMFinisherElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>StatStamina</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMHealthaddElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatWill</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMWillElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>StatLifesteal</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/IMLifestealElixir.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+	</Items>
+</UIRelatedTextures>

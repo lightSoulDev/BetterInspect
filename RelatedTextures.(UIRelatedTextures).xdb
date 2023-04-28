@@ -146,70 +146,70 @@
 		<!-- Stats -->
 		<Item>
 			<name>StatLuck</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_CritChance.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatGosp</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCriticalDamageElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_domination.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatRage</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMAntiHealElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Lethality.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatFastCast</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCooldownElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Icons/Special/Currency/Cooldown.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatStun</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMDoubleAttackElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Icons/Special/Currency/DoubleAttack.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 
 		<Item>
 			<name>StatVitality</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMVitalityElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Vitality.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatAntiCrit</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMConcentrationElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Concentration.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatCaution</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMCautionElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Caution.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatAntiStun</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMInviolabilityElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Inviolability.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatSpeed</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IntellectElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Inviolability.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 
 		<Item>
 			<name>StatMastery</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMPlainDamageElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Plain.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatResolution</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMRageElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Rage.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatFinisher</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMFinisherElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Finisher.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 
 		<Item>
 			<name>StatStamina</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMHealthaddElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Endurance.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatWill</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMWillElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Will.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatLifesteal</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/IMLifestealElixirPowerful.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Lifesteal.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<!-- Artifact Scrolls (F2P) -->
 		<Item>

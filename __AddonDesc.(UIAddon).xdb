@@ -11,15 +11,15 @@
   <Name>BetterInspect</Name>
   <ScriptFileRefs>
     <Item href="/Mods/SampleCommon/SampleAddonBase.lua" />
-    <Item href="src/locale.lua" />
+    <Item href="compiled/locale.lua" />
 
-    <Item href="src/libs/Logger.lua" />
-    <Item href="src/libs/Utils.lua" />
-    <Item href="src/libs/DnD.lua" />
-    <Item href="src/libs/SettingsUI.lua" />
+    <Item href="compiled/Logger.lua" />
+    <Item href="compiled/Utils.lua" />
+    <Item href="compiled/DnD.lua" />
+    <Item href="compiled/SettingsUI.lua" />
 
-    <Item href="src/arts.lua" />
-    <Item href="src/mainscript.lua" />
+    <Item href="compiled/arts.lua" />
+    <Item href="mainscript.lua" />
   </ScriptFileRefs>
   <addon_name>BetterInspect</addon_name>
   <localizedNameFileRef href="name.txt" />
