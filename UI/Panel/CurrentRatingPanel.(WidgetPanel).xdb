@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <WidgetPanel>
-	<Name>StatsPanelAtc</Name>
+	<Name>CurrentRatingPanel</Name>
 	<Priority>1</Priority>
 	<BackLayer href="../Common/Simple.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
 	<Placement>
@@ -8,8 +8,8 @@
 		<X>
 			<Align>WIDGET_ALIGN_LOW</Align>
 			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
-			<Pos>603</Pos>
-			<HighPos>-603</HighPos>
+			<Pos>517</Pos>
+			<HighPos>-517</HighPos>
 			<Size>300</Size>
 		</X>
 		<Y>

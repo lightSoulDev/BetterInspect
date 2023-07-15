@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetTextView>
+	<Name>InspectDataPanelPowerText</Name>
+	<BackLayer href="" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+			<Pos>15</Pos>
+			<Size>0</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Pos>57</Pos>
+			<Size>20</Size>
+		</Y>
+	</Placement>
+	<Visible>false</Visible>
+	<Enabled>true</Enabled>
+	<TransparentInput>false</TransparentInput>
+	<TextStyle>
+		<wrapText>false</wrapText>
+		<showClippedSymbol>true</showClippedSymbol>
+		<ellipsis>false</ellipsis>
+	</TextStyle>
+</WidgetTextView>

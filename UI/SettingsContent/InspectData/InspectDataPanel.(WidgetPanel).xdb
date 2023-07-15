@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetPanel>
+	<Name>InspectDataPanel</Name>
+	<Priority>100</Priority>
+	<Children>
+		<Item href="DataArtsPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="DataExtraPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="DataRatingPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="DataScrollsPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+
+		<Item href="InspectDataPanelText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="InspectDataPanelGsText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="InspectDataPanelPowerText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="InspectDataPanelFairyText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="InspectDataPanelRuneText.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+
+		<Item href="ButtonDelete.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+		
+	</Children>
+	<BackLayer href="../Common/OptionTiledFrame.(WidgetLayerTiledTexture).xdb#xpointer(/WidgetLayerTiledTexture)" />
+	<Placement>
+		<X>
+			<Align>WIDGET_ALIGN_BOTH</Align>
+		</X>
+		<Y>
+			<Pos>0</Pos>
+			<Size>156</Size>
+		</Y>
+	</Placement>
+	<Visible>false</Visible>
+	<Enabled>true</Enabled>
+</WidgetPanel>

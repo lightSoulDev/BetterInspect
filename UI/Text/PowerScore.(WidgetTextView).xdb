@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetTextView>
+	<Name>PowerScoreText</Name>
+	<Priority>1</Priority>
+	<BackLayer href="../Common/Simple.(WidgetLayerSimpleTexture).xdb#xpointer(/WidgetLayerSimpleTexture)" />
+	<Placement>
+		<QuantumScale>false</QuantumScale>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Sizing>WIDGET_SIZING_INTERNAL</Sizing>
+			<Pos>696</Pos>
+			<HighPos>-21</HighPos>
+			<Size>2</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Sizing>WIDGET_SIZING_INTERNAL</Sizing>
+			<Pos>70</Pos>
+			<HighPos>-10</HighPos>
+			<Size>2</Size>
+		</Y>
+	</Placement>
+	<Visible>false</Visible>
+	<Enabled>true</Enabled>
+	<TransparentInput>false</TransparentInput>
+	<TextStyle>
+		<wrapText>false</wrapText>
+		<showClippedSymbol>true</showClippedSymbol>
+		<ellipsis>false</ellipsis>
+	</TextStyle>
+</WidgetTextView>

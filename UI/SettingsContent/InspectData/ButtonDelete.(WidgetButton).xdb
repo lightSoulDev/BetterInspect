@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WidgetButton>
+	<Header>
+		<Prototype href="Button.Prototype.(WidgetButton).xdb#xpointer(/WidgetButton)" />
+	</Header>
+	<Name>ButtonDelete</Name>
+	<Children />
+	<BackLayer href="" />
+	<FrontLayer href="" />
+	<pickMask href="" />
+	<Placement>
+		<QuantumScale>false</QuantumScale>
+		<X>
+			<Align>WIDGET_ALIGN_LOW</Align>
+			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
+			<Pos>10</Pos>
+			<Size>80</Size>
+		</X>
+		<Y>
+			<Align>WIDGET_ALIGN_HIGH</Align>
+			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
+			<HighPos>5</HighPos>
+			<Size>30</Size>
+		</Y>
+	</Placement>
+	<Variants>
+		<Item>
+			<Reaction>setting_InspectData_delete</Reaction>
+		</Item>
+	</Variants>
+	<Visible>true</Visible>
+	<Enabled>true</Enabled>
+	<TabOrder>0</TabOrder>
+	<TransparentInput>false</TransparentInput>
+	<PickChildrenOnly>false</PickChildrenOnly>
+</WidgetButton>

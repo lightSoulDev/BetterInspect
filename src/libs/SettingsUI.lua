@@ -339,6 +339,43 @@ local ITEM_SETTING_CB_POS_6 = {
     },
 }
 
+local QUALITY = {
+    'Junk',
+    'Goods',
+    'Common',
+    'Uncommon',
+    'Rare',
+    'Epic',
+    'Legendary',
+    'Relic',
+    'Dragon'
+}
+
+local QUALITY_HEX = {
+    'ff999999',
+    'ffdcdcdc',
+    'ff00e526',
+    'ff2080ff',
+    'ffc040ff',
+    'ffff8000',
+    'ff00ffd2',
+    'ffe0ff40',
+    'fffb5ead'
+}
+
+local romanNumerals = {
+    [1] = 'I',
+    [2] = 'II',
+    [3] = 'III',
+    [4] = 'IV',
+    [5] = 'V',
+    [6] = 'VI',
+    [7] = 'VII',
+    [8] = 'VIII',
+    [9] = 'IX',
+    [10] = 'X',
+}
+
 local ACTIVE_BUTTONS = {}
 local CURRENT_TAB = nil
 local SettingsMainFrame = mainForm:GetChildChecked("SettingsMain", false)
@@ -658,6 +695,21 @@ local function onItemSettingDelete(params)
     end
 end
 
+local function onInspectDataDelete(params)
+    local id = params.widget:GetParent():GetName()
+    local split_string = {}
+
+    for w in id:gmatch('([^_]+)') do table.insert(split_string, w) end
+
+    if (id and UI_SETTINGS[id]) then
+        UI_SETTINGS[id].value = false
+        saveSettings()
+
+        UI.groupPop(split_string[1], split_string[2])
+        UI.render()
+    end
+end
+
 local function onItemSettingCB(params)
     local id = params.widget:GetParent():GetName()
 
@@ -692,6 +744,7 @@ function UI.init(name)
     common.RegisterReactionHandler(onItemSettingCB, "setting_itemsetting_cb")
     common.RegisterReactionHandler(onSettingButtonInput, "setting_buttoninput")
     common.RegisterReactionHandler(onItemSettingDelete, "setting_itemsetting_delete")
+    common.RegisterReactionHandler(onInspectDataDelete, "setting_InspectData_delete")
     common.RegisterReactionHandler(onInputFocus, "setting_input_focus")
 
     local config = userMods.GetGlobalConfigSection("UI_SETTINGS")
@@ -1082,6 +1135,18 @@ function UI.createItemSetting(name, options, enabled)
     return temp
 end
 
+function UI.createInspectData(name, options)
+    local label = name
+    local temp = {
+        name = name,
+        label = label,
+        type = "InspectData",
+        params = options,
+    }
+
+    return temp
+end
+
 function UI.loadUserSettings()
     USER_SETTINGS = userMods.GetGlobalConfigSection("USER_SETTINGS") or {}
     for group_name, list in pairs(USER_SETTINGS) do
@@ -1341,7 +1406,7 @@ function UI.render()
                     if (UI_SETTINGS[id] and UI_SETTINGS[id].index) then
                         label:SetVal("simplelabel_text", GetLocaleText(tostring(v.params.labels[UI_SETTINGS[id].index])))
                     else
-                        label:SetVal("simplelabel_text", GetLocaleText("Err"))
+                        label:SetVal("simplelabel_text", GetLocaleText(tostring(v.params.labels[1])))
                     end
 
                     if (v.customClass ~= nil) then
@@ -1396,7 +1461,272 @@ function UI.render()
                     local icon = panel:GetChildChecked("ColorPreviewIcon", false)
                     COLOR_PREVIEWS[v.name] = icon
                     updateColorPreview(v.name, icon)
+                    -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                    -- =-            I N S P E C T D A T A            -=
+                    -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                elseif (v.type == "InspectData") then
+                    local panel = CreateWG("InspectDataPanel", "InspectDataPanel", groupFrame, true,
+                        {
+                            alignX = 2,
+                            posX = 1,
+                            sizeX = maxW,
+                            posY = minPosY + verticalIndex * 45 + extraPadding,
+                            highPosX = 0,
+                            alignY = 0
+                        })
+                    local label = panel:GetChildChecked("InspectDataPanelText", false)
+                    local btnDelete = panel:GetChildChecked("ButtonDelete", false)
+                    extraPadding = extraPadding + 112
+                    WtSetPlace(groupFrame, { sizeY = frameH + extraPadding })
+                    groupFrame:AddChild(panel)
+                    panel:SetName(id)
 
+                    if (v.customClass ~= nil) then
+                        label:SetClassVal("class", v.customClass)
+                    else
+                        label:SetClassVal("class", "ColorWhite")
+                    end
+
+                    label:SetVal("text", v.label)
+
+                    if (v.params.gs ~= nil) then
+                        local gscolor = UI.get("GearScoreText", "CustomColor")
+                        if (gscolor == "-") then
+                            gscolor = QUALITY[v.params.gs.quality]
+                        end
+                        local gslabel = panel:GetChildChecked("InspectDataPanelGsText", false)
+                        gslabel:SetFormat('<header color="0x' ..
+                            QUALITY_HEX[v.params.gs.quality] ..
+                            '" alignx="middle" aligny="middle" fontsize="' ..
+                            tostring(15) ..
+                            '" shadow="1" outline="1"><rs class="class1"><r name="value1"/></rs><rs class="class"><r name="value"/></rs></header>');
+                        gslabel:SetVal("value", tostring(math.floor(v.params.gs.value + 0.5)))
+                        gslabel:SetClassVal("class", gscolor)
+                        gslabel:SetVal("value1", "Gearscore - ")
+                        gslabel:SetClassVal("class1", "Golden")
+                        gslabel:Show(true)
+                    end
+
+                    if (v.params.power ~= nil) then
+                        local powercolor = UI.get("PowerScoreText", "Color")
+                        if (powercolor == "-") then
+                            powercolor = "Dragon"
+                        end
+                        local powerlabel = panel:GetChildChecked("InspectDataPanelPowerText", false)
+                        powerlabel:SetFormat('<header color="0x' ..
+                            QUALITY_HEX[5] ..
+                            '" alignx="middle" aligny="middle" fontsize="' ..
+                            tostring(15) ..
+                            '" shadow="1" outline="1"><rs class="class1"><r name="value1"/></rs><rs class="class"><r name="value"/></rs></header>');
+                        powerlabel:SetVal("value", tostring(math.floor(v.params.power.value + 0.5)))
+                        powerlabel:SetClassVal("class", powercolor)
+                        powerlabel:SetVal("value1", "Power - ")
+                        powerlabel:SetClassVal("class1", "Golden")
+                        powerlabel:Show(true)
+                    end
+
+                    if (v.params.fairy ~= nil) then
+                        local fairycolor = UI.get("FairyScoreText", "CustomColor")
+                        local fairyRank = tostring(v.params.fairy.rank)
+                        if (fairycolor == "-") then
+                            fairycolor = QUALITY[v.params.fairy.rank + 1]
+                        end
+                        if (UI.get("FairyScoreText", "UseRomansForFairy")) then
+                            fairyRank = romanNumerals[v.params.fairy.rank]
+                        end
+
+                        if (true) then
+                            fairyRank = fairyRank .. " (" .. tostring(v.params.fairy.level) .. ")"
+                        end
+
+                        local fairylabel = panel:GetChildChecked("InspectDataPanelFairyText", false)
+                        fairylabel:SetFormat('<header color="0xFFFFFFF" alignx="middle" aligny="middle" fontsize="' ..
+                            tostring(15) ..
+                            '" shadow="1" outline="1"><rs class="class1"><r name="value1"/></rs><rs class="class"><r name="value"/></rs></header>');
+                        fairylabel:SetVal("value", fairyRank)
+                        fairylabel:SetClassVal("class", fairycolor)
+                        fairylabel:SetVal("value1", "Fairy - ")
+                        fairylabel:SetClassVal("class1", "Golden")
+                        fairylabel:Show(true)
+                    end
+
+                    if (v.params.runes ~= nil and #v.params.runes > 0) then
+                        local runes = v.params.runes
+                        local runeSeparator = UI.get("RuneScoreText", "RuneSeparator") or "."
+                        local mainSeparator = UI.get("RuneScoreText", "MainSeparator") or " / "
+
+                        local runeslabel = panel:GetChildChecked("InspectDataPanelRuneText", false)
+                        runeslabel:SetFormat('<header color="0xFFFFFFFF" alignx="middle" aligny="middle" fontsize="' ..
+                            tostring(15) ..
+                            '" shadow="1" outline="1"><rs class="class0"><r name="value0"/></rs><rs class="class1"><r name="value1"/></rs>' ..
+                            runeSeparator ..
+                            '<rs class="class2"><r name="value2"/></rs>' ..
+                            runeSeparator ..
+                            '<rs class="class3"><r name="value3"/></rs>' ..
+                            mainSeparator ..
+                            '<rs class="class4"><r name="value4"/></rs>' ..
+                            runeSeparator ..
+                            '<rs class="class5"><r name="value5"/></rs>' ..
+                            runeSeparator .. '<rs class="class6"><r name="value6"/></rs> </header>');
+
+                        runeslabel:SetVal('value1', common.FormatInt(runes[DRESS_SLOT_OFFENSIVERUNE1].runeQuality, '%d'))
+                        runeslabel:SetClassVal('class1', runes[DRESS_SLOT_OFFENSIVERUNE1].runeStyle)
+
+                        runeslabel:SetVal('value2', common.FormatInt(runes[DRESS_SLOT_OFFENSIVERUNE2].runeQuality, '%d'))
+                        runeslabel:SetClassVal('class2', runes[DRESS_SLOT_OFFENSIVERUNE2].runeStyle)
+
+                        runeslabel:SetVal('value3', common.FormatInt(runes[DRESS_SLOT_OFFENSIVERUNE3].runeQuality, '%d'))
+                        runeslabel:SetClassVal('class3', runes[DRESS_SLOT_OFFENSIVERUNE3].runeStyle)
+
+                        runeslabel:SetVal('value4', common.FormatInt(runes[DRESS_SLOT_DEFENSIVERUNE1].runeQuality, '%d'))
+                        runeslabel:SetClassVal('class4', runes[DRESS_SLOT_DEFENSIVERUNE1].runeStyle)
+
+                        runeslabel:SetVal('value5', common.FormatInt(runes[DRESS_SLOT_DEFENSIVERUNE2].runeQuality, '%d'))
+                        runeslabel:SetClassVal('class5', runes[DRESS_SLOT_DEFENSIVERUNE2].runeStyle)
+
+                        runeslabel:SetVal('value6', common.FormatInt(runes[DRESS_SLOT_DEFENSIVERUNE3].runeQuality, '%d'))
+                        runeslabel:SetClassVal('class6', runes[DRESS_SLOT_DEFENSIVERUNE3].runeStyle)
+
+                        runeslabel:SetVal("value0", "Runes - ")
+                        runeslabel:SetClassVal("class0", "Golden")
+                        runeslabel:Show(true)
+                    end
+
+                    local iconTemplate = mainForm:GetChildChecked("InspectIcon", false)
+                    local panelTemplate = mainForm:GetChildChecked("Panel", false)
+
+                    local function drawPanelIcon(panel, i, name, label, texture, setting)
+                        local widget = mainForm:CreateWidgetByDesc(iconTemplate:GetWidgetDesc())
+                        local textBg = nil
+                        WtSetPlace(widget,
+                            { sizeX = 32, sizeY = 32, posX = (32 + 1) * (i - 1), posY = 0 })
+
+                        if (UI.get(setting, "TextBackground")) then
+                            textBg = mainForm:CreateWidgetByDesc(panelTemplate:GetWidgetDesc())
+                            widget:AddChild(textBg)
+                            WtSetPlace(textBg, { sizeX = 32, sizeY = 32, posX = 0, posY = 0 })
+                            textBg:SetBackgroundColor(UI.getGroupColor(setting .. "TextBgColor") or
+                                { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+                            textBg:Show(true)
+                        end
+
+                        if (texture) then
+                            widget:SetBackgroundTexture(texture)
+                        end
+
+                        if (widget ~= nil) then
+                            panel:AddChild(widget)
+
+                            local fontSize = 12
+                            local levelWidget = CreateWG("Text", "Level", textBg or widget, true,
+                                {
+                                    alignX = 0,
+                                    sizeX = 32,
+                                    posX = 0,
+                                    highPosX = 0,
+                                    alignY = 0,
+                                    sizeY = 32,
+                                    posY = 3,
+                                    highPosY = 0
+                                }
+                            )
+                            local alignX = UI.get("ArtsPanel", "TextAlignX") or "right"
+                            local alignY = UI.get("ArtsPanel", "TextAlignY") or "bottom"
+
+                            levelWidget:SetFormat(userMods.ToWString(
+                                "<html><body alignx='"
+                                .. alignX ..
+                                "' aligny='"
+                                .. alignY ..
+                                "' fontsize='"
+                                .. fontSize ..
+                                "' outline='2'><rs class='class'><r name='name'/></rs></body></html>")
+                            )
+
+                            levelWidget:SetVal("name", tostring(label))
+                            levelWidget:SetClassVal("class", "ColorWhite")
+
+                            widget:Show(true)
+                            levelWidget:Show(true)
+                        end
+                    end
+                    local artsPanel = panel:GetChildChecked("DataArtsPanel", false)
+
+                    if (v.params.arts ~= nil and #v.params.arts > 0) then
+                        artsPanel:SetBackgroundColor(UI.getGroupColor("ArtsPanelBgColor") or
+                            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+                        for ai, ap in pairs(v.params.arts) do
+                            local texture = nil
+                            if (ARTS[ap.name] ~= nil) then
+                                local textureId = ARTS[ap.name]
+                                texture = GetGroupTexture("RELATED_TEXTURES", textureId)
+                            end
+                            drawPanelIcon(artsPanel, ai, ap.name, ap.label, texture, "ArtsPanel")
+                        end
+                    else
+                        artsPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.0 })
+                    end
+                    local extraPanel = panel:GetChildChecked("DataExtraPanel", false)
+
+                    if (v.params.extras ~= nil and #v.params.extras > 0) then
+                        extraPanel:SetBackgroundColor(UI.getGroupColor("ExtraPanelBgColor") or
+                            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+
+                        for ei, ep in pairs(v.params.extras) do
+                            local texture = nil
+                            local textureId = GetTextureIndex(ep.name)
+                            if (textureId ~= nil) then
+                                texture = GetGroupTexture("RELATED_TEXTURES", textureId)
+                                if (texture == nil) then
+                                    texture = GetGroupTexture("RELATED_TEXTURES", ep.name)
+                                end
+                            end
+                            drawPanelIcon(extraPanel, ei, ep.name, ep.label, texture, "ExtraPanel")
+                        end
+                    else
+                        extraPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.0 })
+                    end
+                    local ratingPanel = panel:GetChildChecked("DataRatingPanel", false)
+                    if (v.params.raitings ~= nil and #v.params.raitings > 0) then
+                        ratingPanel:SetBackgroundColor(UI.getGroupColor("CurrentRatingPanelBgColor") or
+                            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+                        for ri, rp in pairs(v.params.raitings) do
+                            local texture = nil
+                            local textureId = GetTextureIndex(rp.name)
+                            if (textureId ~= nil) then
+                                texture = GetGroupTexture("RELATED_TEXTURES", textureId)
+                            else
+                                texture = GetGroupTexture("RELATED_TEXTURES", rp.name)
+                            end
+                            drawPanelIcon(ratingPanel, ri, rp.name, rp.label, texture, "CurrentRatingPanel")
+                        end
+                    else
+                        ratingPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.0 })
+                    end
+                    local scrollsPanel = panel:GetChildChecked("DataScrollsPanel", false)
+                    if (v.params.scrolls ~= nil and #v.params.scrolls > 0) then
+                        scrollsPanel:SetBackgroundColor(UI.getGroupColor("ScrollsPanelBgColor") or
+                            { r = 0.0, g = 0.0, b = 0.0, a = 0.5 })
+                        for si, sp in pairs(v.params.scrolls) do
+                            local texture = nil
+                            local textureId = GetTextureIndex(sp.name)
+                            if (textureId ~= nil) then
+                                texture = GetGroupTexture("RELATED_TEXTURES", "ScrollArts" .. textureId)
+                            end
+                            drawPanelIcon(scrollsPanel, si, sp.name, sp.label, texture, "ScrollsPanel")
+                        end
+                    else
+                        scrollsPanel:SetBackgroundColor({ r = 0.0, g = 0.0, b = 0.0, a = 0.0 })
+                    end
+
+                    if (btnDelete) then
+                        if (v.params.static) then btnDelete:Show(false) end
+                        btnDelete:SetVal("label", ToWS(GetLocaleText("ButtonDelete")))
+                    end
+
+                    if (not UI_SETTINGS[id]) then
+                        UI_SETTINGS[id] = { type = v.type, value = v.params }
+                    end
                     -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
                     -- =-           I T E M S E T T I N G S           -=
                     -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

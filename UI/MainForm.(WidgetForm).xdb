@@ -10,6 +10,7 @@
 		<Item href="SettingsContent/Button/ButtonPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="SettingsContent/ButtonInput/ButtonInputPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="SettingsContent/ItemSetting/ItemSettingPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="SettingsContent/InspectData/InspectDataPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="SettingsContent/ColorPreview/ColorPreviewPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="SettingsContent/SimpleLabel/SimpleLabelPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 
@@ -27,6 +28,12 @@
 
 		<Item href="Panel/ScrollsPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="Panel/ExtraPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+		<Item href="Panel/CurrentRatingPanel.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
+
+		<Item href="Text/GearScore.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Text/FairyScore.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Text/RuneScore.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
+		<Item href="Text/PowerScore.(WidgetTextView).xdb#xpointer(/WidgetTextView)" />
 
 		<Item href="SettingsFrame/BackFrame/BackFrame.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />
 		<Item href="SettingsFrame/SettingsMain.(WidgetPanel).xdb#xpointer(/WidgetPanel)" />

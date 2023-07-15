@@ -39,6 +39,20 @@
         "LANG",
         "ITEM_CONT_EQUIPMENT",
         "itemLib",
-        "LogInfoCommon"
+        "LogInfoCommon",
+        "ITEM_CONT_EQUIPMENT_RITUAL",
+        "ENUM_FloatingBudgetType_OffenceBudget",
+        "ENUM_FloatingBudgetType_DefenceBudget",
+        "ENUM_RatingArenaType_3x3",
+        "ENUM_RatingArenaType_6x6",
+        "ENUM_RatingArenaType_HPI",
+        "matchMaking",
+        "DRESS_SLOT_OFFENSIVERUNE1",
+        "DRESS_SLOT_OFFENSIVERUNE2",
+        "DRESS_SLOT_OFFENSIVERUNE3",
+        "DRESS_SLOT_DEFENSIVERUNE1",
+        "DRESS_SLOT_DEFENSIVERUNE2",
+        "DRESS_SLOT_DEFENSIVERUNE3",
+        "containerLib"
     ]
 }

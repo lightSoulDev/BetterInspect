@@ -7,6 +7,10 @@ Global("STATS_DEF", {})
 Global("SCROLLS", {})
 Global("CLOAKS", {})
 Global("BANNERS", {})
+Global("DO_TRINKETS", {})
+Global("TRINKETS", {})
+Global("ALL_TEXTURE_INDEXES", {})
+Global("STATS_ORDER", {})
 
 BANNERS = {
     ["Знамя Воеводы"] = "BannerRed",
@@ -30,10 +34,31 @@ SCROLLS = {
     ["Орнамент Странника"] = "Relic",
 }
 
+STATS_ORDER = {
+    ['Мастерство'] = 1,
+    ['Решимость'] = 2,
+    ['Беспощадность'] = 3,
+    ['Господство'] = 4,
+    ['Удача'] = 5,
+    ['Ярость'] = 6,
+    ['Упорство'] = 7,
+    ['Стремительность'] = 8,
+    ['Стойкость'] = 9,
+    ['Воля'] = 10,
+    ['Кровожадность'] = 11,
+    ['Живучесть'] = 12,
+    ['Инстинкт'] = 13,
+    ['Осторожность'] = 14,
+    ['Незыблемость'] = 15,
+    ['ritual'] = 16,
+    ['power'] = 17,
+    ['stamina'] = 18,
+}
+
 STATS_ATC_MAIN = {
     ['Мастерство'] = "StatMastery",
-    ['Беспощадность'] = "StatFinisher",
     ['Решимость'] = "StatResolution",
+    ['Беспощадность'] = "StatFinisher",
 }
 
 STATS_ATC = {
@@ -59,6 +84,26 @@ STATS_DEF = {
 
 ARTS_POWER = {
     ['Наследие Богов'] = true
+}
+
+DO_TRINKETS = {
+    ['Ненасытный Шип'] = "BloodyThorn",
+    ['Память Света'] = "AltarOfLight",
+    ['Амулет Всех Стихий'] = "TrinketDragonAmulet",
+}
+
+TRINKETS = {
+    ['Эмблема Резни'] = "TrinketUncom",
+    ['Эмблема Разрушения'] = "TrinketRare",
+    ['Эмблема Истребления'] = "TrinketEpic",
+    ['Эмблема Кровавой Жатвы'] = "TrinketLegendary",
+    ['Эмблема Безумия'] = "TrinketRelic",
+
+    ['Эмблема Резни с орнаментом'] = "TrinketUncom",
+    ['Эмблема Разрушения с орнаментом'] = "TrinketRare",
+    ['Эмблема Истребления с орнаментом'] = "TrinketEpic",
+    ['Эмблема Кровавой Жатвы с орнаментом'] = "TrinketLegendary",
+    ['Эмблема Безумия с орнаментом'] = "TrinketRelic",
 }
 
 ARTS = {
@@ -151,3 +196,36 @@ ARTS = {
     ['Потускневший Грааль Пробуждения'] = "ArtefactGPInactive",
     ['Потускневшее Зерцало Свободы'] = "ArtefactZSInactive",
 }
+
+function TableConcat(t1, t2)
+    for i = 1, #t2 do
+        t1[#t1 + 1] = t2[i]
+    end
+    return t1
+end
+
+function GetTextureIndex(name)
+    if (BANNERS[name] ~= nil) then
+        return BANNERS[name]
+    elseif (CLOAKS[name] ~= nil) then
+        return CLOAKS[name]
+    elseif (SCROLLS[name] ~= nil) then
+        return SCROLLS[name]
+    elseif (STATS_ATC_MAIN[name] ~= nil) then
+        return STATS_ATC_MAIN[name]
+    elseif (STATS_ATC[name] ~= nil) then
+        return STATS_ATC[name]
+    elseif (STATS_DEF_MAIN[name] ~= nil) then
+        return STATS_DEF_MAIN[name]
+    elseif (STATS_DEF[name] ~= nil) then
+        return STATS_DEF[name]
+    elseif (DO_TRINKETS[name] ~= nil) then
+        return DO_TRINKETS[name]
+    elseif (TRINKETS[name] ~= nil) then
+        return TRINKETS[name]
+    elseif (ARTS[name] ~= nil) then
+        return ARTS[name]
+    else
+        return nil
+    end
+end

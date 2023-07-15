@@ -8,11 +8,15 @@
 		<X>
 			<Align>WIDGET_ALIGN_LOW</Align>
 			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
+			<Pos>611</Pos>
+			<HighPos>-611</HighPos>
 			<Size>300</Size>
 		</X>
 		<Y>
 			<Align>WIDGET_ALIGN_LOW</Align>
 			<Sizing>WIDGET_SIZING_DEFAULT</Sizing>
+			<Pos>108</Pos>
+			<HighPos>-108</HighPos>
 			<Size>40</Size>
 		</Y>
 	</Placement>

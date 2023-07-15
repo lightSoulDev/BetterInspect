@@ -167,7 +167,7 @@
 
 		<Item>
 			<name>StatVitality</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Vitality.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Endurance.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatAntiCrit</name>
@@ -201,7 +201,7 @@
 
 		<Item>
 			<name>StatStamina</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Endurance.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Vitality.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 		<Item>
 			<name>StatWill</name>
@@ -252,6 +252,51 @@
 		<Item>
 			<name>BannerGreen</name>
 			<textureItem href="/Interface/Icons/Spells/Guild/BannerTactics.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>BloodyThorn</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/BloodyThorn.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>AltarOfLight</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/AltarOfLight.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+
+		<Item>
+			<name>TrinketUncom</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/UncommonTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>TrinketEpic</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/EpicTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>TrinketRare</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/RareTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>TrinketLegendary</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/LegendaryTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>TrinketDragonAmulet</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/DragonAmulet.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>TrinketRelic</name>
+			<textureItem href="/Interface/Icons/Misc/Itemmall/RelicTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>3x3</name>
+			<textureItem href="/Interface/Icons/Equipment/Helm/RatingArenaPvPHelm03.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>6x6</name>
+			<textureItem href="/Interface/Icons/Equipment/Helm/RatingArenaPvPHelm01.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+		</Item>
+		<Item>
+			<name>HPI</name>
+			<textureItem href="/Interface/Icons/Equipment/Helm/AstralHunterHelm02.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
 		</Item>
 	</Items>
 </UIRelatedTextures>
