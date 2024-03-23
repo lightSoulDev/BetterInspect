@@ -16,8 +16,8 @@
   </ScriptFileRefs>
   <Form href="UI/MainForm.(WidgetForm).xdb"/>
   <addon_name>BetterInspect</addon_name>
-  <localizedNameFileRef href="name.txt" />
-  <localizedDescFileRef href="desc.txt" />
+  <localizedNameFileRef href="info/name.txt" />
+  <localizedDescFileRef href="info/desc.txt" />
   <texturesGroups>
     <Item>
       <groupName>RELATED_TEXTURES</groupName>
