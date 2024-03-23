@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <UIAddon>
   <AutoStart>true</AutoStart>
-  <Forms>
-    <Item>
-      <Form href="UI/MainForm.(WidgetForm).xdb#xpointer(/WidgetForm)" />
-      <Id>Main</Id>
-    </Item>
-  </Forms>
-  <MainFormId>Main</MainFormId>
   <Name>BetterInspect</Name>
   <ScriptFileRefs>
     <Item href="/Mods/SampleCommon/SampleAddonBase.lua" />
@@ -21,6 +14,7 @@
     <Item href="src/arts.lua" />
     <Item href="src/mainscript.lua" />
   </ScriptFileRefs>
+  <Form href="UI/MainForm.(WidgetForm).xdb"/>
   <addon_name>BetterInspect</addon_name>
   <localizedNameFileRef href="name.txt" />
   <localizedDescFileRef href="desc.txt" />
