@@ -2,3 +2,4 @@ compiled/*
 mainscript.luac
 BetterInspect/*
 *.zip
+run_patcher_for.bat
