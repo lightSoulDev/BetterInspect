@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <WidgetLayerTiledTexture>
 	<Color>0xffffffff</Color>
 	<Grayed>false</Grayed>
 	<BlendEffect>BLEND_EFFECT_ALPHABLND</BlendEffect>
 	<flatPlacement>false</flatPlacement>
 	<lazyLoad>false</lazyLoad>
-	<textureItem href="/Interface/Ingame/ContextCharacter2/RelatedTextures/StatsHidePlate.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+	<textureItem href="../../SettingsTextures/Interface/Ingame/ContextCharacter2/RelatedTextures/StatsHidePlate.(UISingleTexture).xdb" />
 	<Layout>
 		<LeftX>30</LeftX>
 		<MiddleX>2</MiddleX>
