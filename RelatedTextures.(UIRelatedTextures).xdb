@@ -1,302 +1,302 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <UIRelatedTextures>
 	<Items>
 		<Item>
 			<name>ArtefactTopLeveling</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtefactTopLeveling.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtefactTopLeveling.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactGodsLegacy</name>
-			<textureItem href="/Interface/Icons/Spells/DragonValor.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/DragonValor.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactTopLevelingInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtefactTopLevelingInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtefactTopLevelingInactive.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactWhip</name>
-			<textureItem href="/Interface/Icons/Misc/Crafting/NoProperty.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Crafting/NoProperty.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactWill</name>
-			<textureItem href="/Interface/Icons/Spells/FatalityDemon.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/FatalityDemon.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactCup</name>
-			<textureItem href="/Interface/Icons/Spells/Paladin/RevengeRage.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Paladin/RevengeRage.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactArrow</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/ExecutionerHalo.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/ExecutionerHalo.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactBook</name>
-			<textureItem href="/Interface/Icons/Misc/Quest/ArtifactColorBlood.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Quest/ArtifactColorBlood.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactBoot</name>
-			<textureItem href="/Interface/Icons/Equipment/Leather/LeatherBoots03.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Leather/LeatherBoots03.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactBrooch</name>
-			<textureItem href="/Interface/Icons/Misc/Quest/MysticArtifacts.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Quest/MysticArtifacts.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactCloak</name>
-			<textureItem href="/Interface/Icons/Equipment/Cloak/ChampionCloakHAv2.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Cloak/ChampionCloakHAv2.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactDagger</name>
-			<textureItem href="/Interface/Icons/Spells/Warrior/WarriorBlessedSwordUpgrade.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Warrior/WarriorBlessedSwordUpgrade.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactKadilo</name>
-			<textureItem href="/Interface/Icons/Equipment/Trinket/Kadilo.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Trinket/Kadilo.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactLoreyley</name>
-			<textureItem href="/Interface/Icons/Equipment/Helm/LorePriestHelm.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Helm/LorePriestHelm.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactMayve</name>
-			<textureItem href="/Interface/Icons/Misc/Quest/TriumphOfSpirit.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Quest/TriumphOfSpirit.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactMelusina</name>
-			<textureItem href="/Interface/Icons/Misc/Quest/ArmorZak06.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Quest/ArmorZak06.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactNefer</name>
-			<textureItem href="/Interface/Icons/Spells/Demonologist/EvilWill.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Demonologist/EvilWill.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactProspero</name>
-			<textureItem href="/Interface/Icons/Misc/Event/ShieldCarrier.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Event/ShieldCarrier.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactShield</name>
-			<textureItem href="/Interface/Icons/Mounts/SpellsMounts/ExoShield02.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Mounts/SpellsMounts/ExoShield02.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactStaff</name>
-			<textureItem href="/Interface/Icons/Spells/Priest/ExpelDemon.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Priest/ExpelDemon.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactYoke</name>
-			<textureItem href="/Interface/Icons/Equipment/Shoulders/CultistPaladinShoulder.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Shoulders/CultistPaladinShoulder.(UISingleTexture).xdb" />
 		</Item>
-		<!-- Support Old Clients -->
+		
 		<Item>
 			<name>ArtefactKB</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/CodexOfLife.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/CodexOfLife.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactKP</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactVictory.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactVictory.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactTE</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactUnity.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactUnity.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactAD</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/AspisDragon.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/AspisDragon.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactKS</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactWandererCrown.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactWandererCrown.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactGP</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/BlackGrail.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/BlackGrail.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactZS</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactFreedom.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactFreedom.(UISingleTexture).xdb" />
 		</Item>
 
 		<Item>
 			<name>ArtefactKBInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/CodexOfLifeInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/CodexOfLifeInactive.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactKPInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactVictoryInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactVictoryInactive.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactTEInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactUnityInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactUnityInactive.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactADInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/AspisDragonInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/AspisDragonInactive.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactKSInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactWandererCrownInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactWandererCrownInactive.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactGPInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/BlackGrailInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/BlackGrailInactive.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ArtefactZSInactive</name>
-			<textureItem href="/Interface/Icons/Misc/Astral/ArtifactFreedomInactive.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Astral/ArtifactFreedomInactive.(UISingleTexture).xdb" />
 		</Item>
-		<!-- Stats -->
+		
 		<Item>
 			<name>StatLuck</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_CritChance.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_CritChance.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatGosp</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_domination.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_domination.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatRage</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Lethality.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Lethality.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatFastCast</name>
-			<textureItem href="/Interface/Icons/Special/Currency/Cooldown.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Special/Currency/Cooldown.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatStun</name>
-			<textureItem href="/Interface/Icons/Special/Currency/DoubleAttack.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Special/Currency/DoubleAttack.(UISingleTexture).xdb" />
 		</Item>
 
 		<Item>
 			<name>StatVitality</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Endurance.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Endurance.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatAntiCrit</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Concentration.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Concentration.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatCaution</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Caution.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Caution.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatAntiStun</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Inviolability.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Inviolability.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatSpeed</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Inviolability.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Inviolability.(UISingleTexture).xdb" />
 		</Item>
 
 		<Item>
 			<name>StatMastery</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Plain.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Plain.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatResolution</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Rage.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Rage.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatFinisher</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Finisher.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Finisher.(UISingleTexture).xdb" />
 		</Item>
 
 		<Item>
 			<name>StatStamina</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Vitality.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Vitality.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatWill</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Will.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Will.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>StatLifesteal</name>
-			<textureItem href="/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Lifesteal.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Ingame/ContextRelatedTextures/InnateStats/ENUM_InnateStats_Lifesteal.(UISingleTexture).xdb" />
 		</Item>
-		<!-- Artifact Scrolls (F2P) -->
+		
 		<Item>
 			<name>ScrollArtsUncommon</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll01.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/ArtefactScroll01.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ScrollArtsRare</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll02.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/ArtefactScroll02.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ScrollArtsEpic</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll03.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/ArtefactScroll03.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ScrollArtsLegendary</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll04.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/ArtefactScroll04.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ScrollArtsRelic</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/ArtefactScroll05.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/ArtefactScroll05.(UISingleTexture).xdb" />
 		</Item>
-		<!-- Cloaks -->
+		
 		<Item>
 			<name>GuildCloak</name>
-			<textureItem href="/Interface/Icons/Spells/Guild/Tabard.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Guild/Tabard.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>ChampCloak</name>
-			<textureItem href="/Interface/Icons/Spells/Guild/ChampionTabard.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Guild/ChampionTabard.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>BannerRed</name>
-			<textureItem href="/Interface/Icons/Spells/Guild/WarlordBanner.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Guild/WarlordBanner.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>BannerBlue</name>
-			<textureItem href="/Interface/Icons/Spells/Guild/GuardianBanner.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Guild/GuardianBanner.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>BannerGreen</name>
-			<textureItem href="/Interface/Icons/Spells/Guild/BannerTactics.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Spells/Guild/BannerTactics.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>BloodyThorn</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/BloodyThorn.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/BloodyThorn.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>AltarOfLight</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/AltarOfLight.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/AltarOfLight.(UISingleTexture).xdb" />
 		</Item>
 
 		<Item>
 			<name>TrinketUncom</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/UncommonTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/UncommonTrinket.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>TrinketEpic</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/EpicTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/EpicTrinket.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>TrinketRare</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/RareTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/RareTrinket.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>TrinketLegendary</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/LegendaryTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/LegendaryTrinket.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>TrinketDragonAmulet</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/DragonAmulet.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/DragonAmulet.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>TrinketRelic</name>
-			<textureItem href="/Interface/Icons/Misc/Itemmall/RelicTrinket.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Misc/Itemmall/RelicTrinket.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>3x3</name>
-			<textureItem href="/Interface/Icons/Equipment/Helm/RatingArenaPvPHelm03.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Helm/RatingArenaPvPHelm03.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>6x6</name>
-			<textureItem href="/Interface/Icons/Equipment/Helm/RatingArenaPvPHelm01.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Helm/RatingArenaPvPHelm01.(UISingleTexture).xdb" />
 		</Item>
 		<Item>
 			<name>HPI</name>
-			<textureItem href="/Interface/Icons/Equipment/Helm/AstralHunterHelm02.(UISingleTexture).xdb#xpointer(/UISingleTexture)" />
+			<textureItem href="ClientTextures/Interface/Icons/Equipment/Helm/AstralHunterHelm02.(UISingleTexture).xdb" />
 		</Item>
 	</Items>
 </UIRelatedTextures>

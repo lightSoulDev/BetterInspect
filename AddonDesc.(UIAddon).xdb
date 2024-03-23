@@ -31,10 +31,6 @@
       <groupName>STAT_ELIXIR_PWR</groupName>
       <textures href="StatsElexirPowerfull.(UIRelatedTextures).xdb#xpointer(/UIRelatedTextures)"/>
     </Item>
-    <Item>
-      <groupName>CUSTOM_ICONS</groupName>
-      <textures href="CustomIcons.(UIRelatedTextures).xdb#xpointer(/UIRelatedTextures)"/>
-    </Item>
   </texturesGroups>
   <addon_date>1558901818</addon_date>
 </UIAddon>
