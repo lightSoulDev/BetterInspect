@@ -2,4 +2,5 @@ compiled/*
 mainscript.luac
 BetterInspect/*
 *.zip
+*.pak
 run_patcher_for.bat

@@ -2,10 +2,16 @@ import os
 import sys
 import shutil
 import xml.etree.ElementTree as ET
+import argparse
 
 addonName = "BetterInspect"
 
 def main(args):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-g", "--guild", help="Guild Id", type=int)
+    args = parser.parse_args()
+    print(args.guild)
+
     AddonDesc = ""
     with open("AddonDesc.(UIAddon).xdb", "r", encoding="UTF-8") as f:
         AddonDesc = f.read()
@@ -61,6 +67,29 @@ def main(args):
     lines[0] = lines[0].replace("Dev ", "")
     with open(f"{addonName}/info/name.txt", "w", encoding="UTF-16 LE") as f:
         f.writelines(lines)
+    
+    # now i need to pack the folder into a .pak file
+    # inside the .pak file, the folder should be "Mods/Addons/AddonName"
+    # the .pak file should be named "AddonName.pak"
+    
+    # create Mods/Addons/AddonName folder
+    if os.path.exists("_pak/Mods/Addons"):
+        shutil.rmtree("_pak/Mods/Addons")
+    os.makedirs("_pak/Mods/Addons")
+    os.remove(f"{addonName}.pak")
+    os.remove(f"{addonName}.zip")
+
+    # move _out to Mods/Addons/AddonName
+    shutil.move(addonName, "_pak/Mods/Addons")
+
+    # pack Mods/Addons/AddonName to AddonName.pak
+    shutil.make_archive(addonName, 'zip', "_pak")
+
+    # move AddonName.zip to AddonName.pak
+    os.rename(f"{addonName}.zip", f"{addonName}.pak")
+
+    # delete _pak
+    shutil.rmtree("_pak")
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -281,23 +281,39 @@ local function hidePanel(panelWidget)
     end
 end
 
+local function cleanTags(itemId)
+    if (itemwt[itemId]) then
+        itemwt[itemId]:DestroyWidget()
+        itemwt[itemId] = nil
+    end
+    if (itemwtlvl[itemId]) then
+        itemwtlvl[itemId]:DestroyWidget()
+        itemwtlvl[itemId] = nil
+    end
+    if (itemwttime[itemId]) then
+        itemwttime[itemId]:DestroyWidget()
+
+    end
+    if (itemwteq["|" .. tostring(itemId) .. "_01" .. "|"]) then
+        itemwteq["|" .. tostring(itemId) .. "_01" .. "|"]:DestroyWidget()
+        itemwteq["|" .. tostring(itemId) .. "_01" .. "|"] = nil
+    end
+    if (itemwteq["|" .. tostring(itemId) .. "_02" .. "|"]) then
+        itemwteq["|" .. tostring(itemId) .. "_02" .. "|"]:DestroyWidget()
+        itemwteq["|" .. tostring(itemId) .. "_02" .. "|"] = nil
+    end
+
+    itemIDLIST[itemId] = nil
+    -- Log("Cleared: " .. tostring(itemId))
+end
+
 local function onChangeInventorySlot(params)
     if (BagSlot1:IsVisibleEx()) then
         if UI.get("BagLabels", "BagGlobalEnable") then
             if itemIDLIST[params.itemId] ~= nil then
                 local info = itemLib.GetItemInfo(params.itemId)
                 if (info) then
-                    if (itemwt[params.itemId]) then itemwt[params.itemId]:DestroyWidget() end
-                    if (itemwtlvl[params.itemId]) then itemwtlvl[params.itemId]:DestroyWidget() end
-                    if (itemwttime[params.itemId]) then itemwttime[params.itemId]:DestroyWidget() end
-                    if (itemwteq["|" .. tostring(params.itemId) .. "_01" .. "|"]) then
-                        itemwteq
-                            ["|" .. tostring(params.itemId) .. "_01" .. "|"]:DestroyWidget()
-                    end
-                    if (itemwteq["|" .. tostring(params.itemId) .. "_02" .. "|"]) then
-                        itemwteq
-                            ["|" .. tostring(params.itemId) .. "_02" .. "|"]:DestroyWidget()
-                    end
+                    -- cleanTags(params.itemId)
                     local tab = avatar.GetInventoryItemIds()
                     local bugSize = avatar.GetInventorySize() / 3
                     if buttonslot1:GetVariant() == 1 then
@@ -330,16 +346,20 @@ end
 function ClearBagLabels()
     for k, v in pairs(itemwt) do
         v:DestroyWidget()
+        itemwt[k] = nil
     end
     for k, v in pairs(itemwttime) do
         v:DestroyWidget()
+        itemwttime[k] = nil
     end
     for k, v in pairs(itemwteq) do
         v:DestroyWidget()
+        itemwteq[k] = nil
     end
 
     for k, v in pairs(itemwtlvl) do
         v:DestroyWidget()
+        itemwtlvl[k] = nil
     end
 
     -- itemwt = {}
@@ -366,7 +386,9 @@ local itemnames = {
 
 function CheckBagItemById(tab, tabindex, bugSize, bugslots)
     local itemId = avatar.GetInventoryItemId(bugslots)
+    -- Log("CheckBagItemById: " .. tostring(itemId))
     if (itemId) then
+        cleanTags(itemId)
         local tabSlot = containerLib.GetItemSlot(itemId).slot - bugSize * tabindex
         local info = itemLib.GetItemInfo(itemId)
         local tempInfo = itemLib.GetTemporaryInfo(itemId)
@@ -377,7 +399,6 @@ function CheckBagItemById(tab, tabindex, bugSize, bugslots)
             local fontsize = UI.get("BagLabels", "BagItemLevelTextFontSize") or 14
             local labelColor = UI.get("BagLabels", "BagItemLevelColor") or "ColorWhite"
 
-            if (itemwt[itemId]) then itemwt[itemId]:DestroyWidget() end
             local lvl = CreateWG("Text", "ItemLvl", Area:GetChildChecked(
                     "SlotLine" .. userMods.FromWString(common.FormatInt(math.floor(((tabSlot + 1) / 6) + 0.9), "%02d")),
                     false):GetChildChecked("Item0" .. containerLib.GetItemSlot(itemId).slot % 6 + 1, false), true,
@@ -406,6 +427,7 @@ function CheckBagItemById(tab, tabindex, bugSize, bugslots)
                     tostring(userMods.FromWString(common.ExtractWStringFromValuedText(info.description)):sub(227, 230)))
             end
             itemwtlvl[itemId] = lvl
+            -- Log("Created [itemwtlvl]: " .. tostring(itemId) .. " " .. tostring(userMods.FromWString(info.name)))
             itemIDLIST[itemId] = true
             lvl:SetClassVal("class", labelColor)
         elseif (info and itemLib.GetBudgets(itemId) ~= nil) then
@@ -417,10 +439,6 @@ function CheckBagItemById(tab, tabindex, bugSize, bugslots)
             local fontsize = UI.get("BagLabels", "BagEqPercentTextFontSize") or 14
             local percentInfo = itemLib.GetBudgets(itemId)
 
-            if (itemwteq["|" .. tostring(itemId) .. "_01|"]) then
-                itemwteq["|" .. tostring(itemId) .. "_01|"]
-                    :DestroyWidget()
-            end
             if (percentInfo == nil) then return end
             if (percentInfo[ENUM_FloatingBudgetType_OffenceBudget] < 100) then offPosX = offPosX + 2 end
 
@@ -455,11 +473,6 @@ function CheckBagItemById(tab, tabindex, bugSize, bugslots)
             local offPosX = 1
             local bs = ""
             local fontsize = UI.get("BagLabels", "BagDOTextFontSize") or 14
-
-            if (itemwteq["|" .. tostring(itemId) .. "_01|"]) then
-                itemwteq["|" .. tostring(itemId) .. "_01|"]
-                    :DestroyWidget()
-            end
 
             local off = CreateWG("Text", "ItemLvl", Area:GetChildChecked(
                     "SlotLine" .. userMods.FromWString(common.FormatInt(math.floor(((tabSlot + 1) / 6) + 0.9), "%02d")),
@@ -506,15 +519,9 @@ function CheckBagItemById(tab, tabindex, bugSize, bugslots)
             elseif (seconds > 0) then
                 descr = tostring(seconds) .. "ñ"
             end
-            if (itemwttime[itemId]) then itemwttime[itemId]:DestroyWidget() end
 
             local bs = ""
             local fontsize = UI.get("BagLabels", "BagTimeleftTextFontSize") or 14
-
-            if (itemwteq["|" .. tostring(itemId) .. "_01|"]) then
-                itemwteq["|" .. tostring(itemId) .. "_01|"]
-                    :DestroyWidget()
-            end
 
             local critTime = tonumber(UI.get("BagLabels", "BagTimeleftCriticalHours")) or 48
 
@@ -579,6 +586,7 @@ local function onWidgetShowChanged(p)
         for k, v in pairs(selfLabels) do
             if (v ~= nil) then
                 v:DestroyWidget()
+                selfLabels[k] = nil
             end
         end
         if (p.widget:IsVisibleEx()) then
@@ -788,14 +796,14 @@ function DrawOffDeffPercent(i, eqSlot, info, itemId, isSelf)
 end
 
 local function onInventorySlotChanged(p)
-    Log("onInventorySlotChanged")
+    -- Log("onInventorySlotChanged")
     for k, v in pairs(p) do
         Log(tostring(k) .. " : " .. tostring(v))
     end
 end
 
 local function onEqSlotChanged(p)
-    Log("onEqSlotChanged")
+    -- Log("onEqSlotChanged")
     for k, v in pairs(p) do
         Log(tostring(k) .. " : " .. tostring(v))
     end
@@ -1984,7 +1992,9 @@ end
 
 local function onInspectStarted(p)
     local unitId = avatar.GetTarget()
+    if (unitId == nil) then return end
     if (unitId == lastInspectUnitId) then return end
+    if not object.IsExist(unitId) then return end
 
     if (avatar.IsTargetInspected()) then
         lastInspectUnitId = unitId
@@ -2028,6 +2038,7 @@ local function onTargetChange(p)
 
     local unitId = avatar.GetTarget()
     if (unitId == nil) then return end
+    if not object.IsExist(unitId) then return end
 
     if (unitId == avatar.GetId()) then
         drawScrolls(avatar.GetId())
@@ -2147,6 +2158,16 @@ end
 
 local function searchDB()
 
+end
+
+local function onSlash(p)
+	local m = userMods.FromWString(p.text)
+	local split_string = {}
+	for w in m:gmatch("%S+") do table.insert(split_string, w) end
+
+	if (split_string[1]:lower() == '/bi.clear') then
+		ClearBagLabels()
+	end
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -2596,11 +2617,14 @@ local function setupUI()
 end
 
 function Init()
+    -- CHECKS
+
     common.RegisterEventHandler(onWidgetShowChanged, "EVENT_WIDGET_SHOW_CHANGED")
     common.RegisterEventHandler(onChangeInventorySlot, "EVENT_INVENTORY_SLOT_CHANGED")
     -- common.RegisterEventHandler(onChangeEqSlot, "EVENT_UNIT_EQUIPMENT_CHANGED")
     -- common.RegisterEventHandler(onInspect, "EVENT_INSPECT_STARTED")
     -- common.RegisterEventHandler(onInspectFinish, "EVENT_INSPECT_FINISHED")
+	common.RegisterEventHandler(onSlash, 'EVENT_UNKNOWN_SLASH_COMMAND')
     common.RegisterEventHandler(onTargetChange, "EVENT_AVATAR_TARGET_CHANGED")
     common.RegisterEventHandler(onInspectStarted, "EVENT_INSPECT_STARTED")
 
