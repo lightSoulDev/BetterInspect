@@ -70,9 +70,13 @@ def main(args):
     
     if os.path.exists("_pak/Mods/Addons"):
         shutil.rmtree("_pak/Mods/Addons")
+
+    if os.path.exists(f"{addonName}.pak"):
+        os.remove(f"{addonName}.pak")
+    if os.path.exists(f"{addonName}.zip"):
+        os.remove(f"{addonName}.zip")
+
     os.makedirs("_pak/Mods/Addons")
-    os.remove(f"{addonName}.pak")
-    os.remove(f"{addonName}.zip")
     shutil.move(addonName, "_pak/Mods/Addons")
     shutil.make_archive(addonName, 'zip', "_pak")
     os.rename(f"{addonName}.zip", f"{addonName}.pak")
