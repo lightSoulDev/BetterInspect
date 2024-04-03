@@ -308,6 +308,10 @@ local function cleanTags(itemId)
 end
 
 local function onChangeInventorySlot(params)
+    -- Log("onChangeInventorySlot")
+    -- for k, v in pairs(params) do
+    --     Log(tostring(k) .. " : " .. tostring(v))
+    -- end
     if (BagSlot1:IsVisibleEx()) then
         if UI.get("BagLabels", "BagGlobalEnable") then
             if itemIDLIST[params.itemId] ~= nil then
@@ -316,12 +320,22 @@ local function onChangeInventorySlot(params)
                     -- cleanTags(params.itemId)
                     local tab = avatar.GetInventoryItemIds()
                     local bugSize = avatar.GetInventorySize() / 3
+                    local bugslot = params.slotIndex
+                    local tabindex = 0
                     if buttonslot1:GetVariant() == 1 then
-                        CheckBagItemById(tab, 0, bugSize, params.slotIndex)
+                        bugslot = params.slotIndex
+                        tabindex = 0
                     elseif buttonslot2:GetVariant() == 1 then
-                        CheckBagItemById(tab, 1, bugSize, bugSize + params.slotIndex)
+                        bugslot = bugSize + params.slotIndex
+                        tabindex = 1
                     elseif buttonslot3:GetVariant() == 1 then
-                        CheckBagItemById(tab, 2, bugSize, 2 * bugSize + params.slotIndex)
+                        bugslot = bugSize * 2 + params.slotIndex
+                        tabindex = 2
+                    end
+
+                    local itemId = avatar.GetInventoryItemId(bugslot)
+                    if (itemId ~= nil) then
+                        CheckBagItemById(tab, tabindex, bugSize, itemId)
                     end
                 end
             end
@@ -372,8 +386,9 @@ function DrawBagTab(tabindex)
     if (UI.get("BagLabels", "BagGlobalEnable")) then
         local tab = avatar.GetInventoryItemIds()
         local bugSize = avatar.GetInventorySize() / 3
-        for bugslots = bugSize * tabindex, bugSize * (tabindex + 1) - 1 do
-            CheckBagItemById(tab, tabindex, bugSize, bugslots)
+        for bugslot = bugSize * tabindex, bugSize * (tabindex + 1) - 1 do
+            local itemId = avatar.GetInventoryItemId(bugslot)
+            CheckBagItemById(tab, tabindex, bugSize, itemId)
         end
     end
 end
@@ -384,9 +399,8 @@ local itemnames = {
     ['Компас героя'] = true,
 }
 
-function CheckBagItemById(tab, tabindex, bugSize, bugslots)
-    local itemId = avatar.GetInventoryItemId(bugslots)
-    -- Log("CheckBagItemById: " .. tostring(itemId))
+function CheckBagItemById(tab, tabindex, bugSize, itemId)
+    -- local itemId = avatar.GetInventoryItemId(bugslots)
     if (itemId) then
         cleanTags(itemId)
         local tabSlot = containerLib.GetItemSlot(itemId).slot - bugSize * tabindex
