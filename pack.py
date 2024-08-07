@@ -52,9 +52,9 @@ def main(args):
                 newPath = os.path.join(root, name[:-4]).replace('src', f'{addonName}\compiled') + ".luac"
                 newPath = os.path.abspath(newPath)
                 os.makedirs(os.path.dirname(newPath), exist_ok=True)
-                command = f"luajit-2.0.5.exe -b \"{os.path.abspath(os.path.join(root, name))}\" \"{newPath}\""
+                command = f"luajit.exe -b \"{os.path.abspath(os.path.join(root, name))}\" \"{newPath}\""
                 prev = os.getcwd()
-                os.chdir("C:\\AO\\tools\\compile")
+                os.chdir("C:\\AO\\tools\\compile\\x86")
                 os.system(command)
                 os.chdir(prev)
     

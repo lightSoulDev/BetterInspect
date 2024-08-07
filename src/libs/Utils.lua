@@ -120,3 +120,21 @@ function SetConfig(name, value)
     end
     userMods.SetGlobalConfigSection(common.GetAddonName(), cfg)
 end
+
+local function checkWString(v)
+    if not common.IsWString(v) then
+        error(('param 1 not a class WString (type: %s)'):format(common.GetApiType(v)))
+    end
+    return v
+end
+
+local function checkValuedText(v)
+    if not common.IsValuedText(v) then
+        error(('param 1 not a class ValuedText (type: %s)'):format(common.GetApiType(v)))
+    end
+    return v
+end
+
+function common.ExtractWStringFromValuedText(valuedText)
+    return checkValuedText(valuedText):ToWString()
+end
