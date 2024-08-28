@@ -15,6 +15,7 @@ def main(args):
     AddonDesc = ""
     with open("AddonDesc.(UIAddon).xdb", "r", encoding="UTF-8") as f:
         AddonDesc = f.read()
+        # test change
     
     # delete _out folder if exists
     if os.path.exists(addonName):
